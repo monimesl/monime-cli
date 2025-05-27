@@ -26,7 +26,7 @@ export default function App() {
                     9:41 &nbsp;
                 </div>
                 <div style={{border: 'none', background: "none", outline: 'none'}}>
-                    Orange 📶
+                    Africell 📶
                 </div>
             </div>
         </div>
