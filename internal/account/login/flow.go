@@ -44,7 +44,7 @@ func (f *Flow) Run(ctx context.Context) (Token, error) {
 		return Token{}, err
 	}
 	securedToken.bytes = tokenBytes
-	fmt.Println("🔏 Verifying token...")
+	fmt.Println("🔏 Verifying token signature...")
 	if err = f.verifier.verify(securedToken); err != nil {
 		return Token{}, err
 	}
