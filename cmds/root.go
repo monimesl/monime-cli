@@ -21,6 +21,9 @@ var rootCmd = &cobra.Command{
 	Version:       "0.1.2",
 	SilenceErrors: true,
 	SilenceUsage:  true,
+	CompletionOptions: cobra.CompletionOptions{
+		DisableDefaultCmd: true,
+	},
 }
 
 func init() {
@@ -29,6 +32,9 @@ func init() {
 		account.Command,
 		simulate.Command,
 	)
+	rootCmd.SetHelpCommand(&cobra.Command{
+		Hidden: true,
+	})
 
 }
 
