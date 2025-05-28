@@ -3,6 +3,7 @@ package account
 import (
 	"context"
 	"errors"
+	"fmt"
 	"github.com/monimesl/monime-cli/pkg/store"
 )
 
@@ -11,6 +12,7 @@ type Repository interface {
 	SaveAccounts(ctx context.Context, list List) error
 	AddAccount(ctx context.Context, account Account) error
 	GetAccountById(ctx context.Context, id string) (Account, bool, error)
+	RemoveAccount(ctx context.Context, acc Account) error
 }
 
 const (
@@ -32,7 +34,7 @@ func (r defaultRepository) ListAccounts(context.Context) (List, error) {
 		return List{}, err
 	}
 	for i, account := range list.Items {
-		if err = r.setAccountSecrets(&account); err != nil {
+		if err = r.loadAccountSecrets(&account); err != nil {
 			return List{}, err
 		}
 		list.Items[i] = account
@@ -53,10 +55,22 @@ func (r defaultRepository) AddAccount(ctx context.Context, account Account) erro
 	if err = r.SaveAccounts(ctx, list); err != nil {
 		return err
 	}
-	if err = store.Get().SetSecret(accountIdField, account.Id); err != nil {
+	if err = r.storeAccountSecrets(account); err != nil {
 		return err
 	}
-	if err = store.Get().SetSecret(accountTokenField, account.Token); err != nil {
+	return nil
+}
+
+func (r defaultRepository) RemoveAccount(ctx context.Context, acc Account) error {
+	list, err := r.ListAccounts(ctx)
+	if err != nil {
+		return err
+	}
+	list.Remove(acc)
+	if err = r.SaveAccounts(ctx, list); err != nil {
+		return err
+	}
+	if err = r.deleteAccountSecrets(acc); err != nil {
 		return err
 	}
 	return nil
@@ -68,7 +82,7 @@ func (r defaultRepository) GetAccountById(ctx context.Context, id string) (Accou
 		return Account{}, false, err
 	}
 	if acc, ok := list.GetById(id); ok {
-		if err = r.setAccountSecrets(&acc); err != nil {
+		if err = r.loadAccountSecrets(&acc); err != nil {
 			return Account{}, false, err
 		}
 		return acc, true, nil
@@ -76,12 +90,41 @@ func (r defaultRepository) GetAccountById(ctx context.Context, id string) (Accou
 	return Account{}, false, nil
 }
 
-func (r defaultRepository) setAccountSecrets(acc *Account) (err error) {
-	if acc.Id, err = store.Get().GetSecret(accountIdField); err != nil {
+func (r defaultRepository) loadAccountSecrets(acc *Account) (err error) {
+	idKey := r.accountIdSecretKey(*acc)
+	tokenKey := r.accountTokenSecretKey(*acc)
+	if acc.Id, err = store.Get().GetSecret(idKey); err != nil && !errors.Is(err, store.ErrKeyNotFound) {
 		return err
 	}
-	if acc.Token, err = store.Get().GetSecret(accountTokenField); err != nil {
+	if acc.Token, err = store.Get().GetSecret(tokenKey); err != nil && !errors.Is(err, store.ErrKeyNotFound) {
 		return err
 	}
 	return nil
+}
+
+func (r defaultRepository) storeAccountSecrets(acc Account) (err error) {
+	idKey := r.accountIdSecretKey(acc)
+	tokenKey := r.accountTokenSecretKey(acc)
+	if err = store.Get().SetSecret(idKey, acc.Id); err != nil {
+		return err
+	}
+	if err = store.Get().SetSecret(tokenKey, acc.Token); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (r defaultRepository) deleteAccountSecrets(acc Account) (err error) {
+	return errors.Join(
+		store.Get().DeleteSecret(r.accountIdSecretKey(acc)),
+		store.Get().DeleteSecret(r.accountTokenSecretKey(acc)),
+	)
+}
+
+func (r defaultRepository) accountIdSecretKey(acc Account) string {
+	return fmt.Sprintf("%s_%s", accountIdField, acc.Reference)
+}
+
+func (r defaultRepository) accountTokenSecretKey(acc Account) string {
+	return fmt.Sprintf("%s_%s", accountTokenField, acc.Reference)
 }

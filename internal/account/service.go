@@ -62,6 +62,22 @@ func (s *Service) Login(ctx context.Context) error {
 		return err
 	}
 	alias := text.Format(token.Account.Alias, text.FormatOptions{Bold: true, Color: "green"})
-	fmt.Printf("✅ Logged in successfully as user: %s", alias)
+	text.PrintSuccess("Logged in successfully as user: %s", alias)
+	return nil
+}
+
+func (s *Service) Logout(ctx context.Context, alias string) error {
+	text.PrintStart("Logging out of %s as user", alias)
+	acc, exist, err := s.repository.GetAccountById(ctx, alias)
+	if err != nil {
+		return err
+	}
+	if !exist {
+		return fmt.Errorf("unable to log out user %s as it does not exist", alias)
+	}
+	if err = s.repository.RemoveAccount(ctx, acc); err != nil {
+		return err
+	}
+	text.PrintSuccess("Logged out user %s successfully", alias)
 	return nil
 }

@@ -2,6 +2,7 @@ package store
 
 import (
 	"encoding/json"
+	"errors"
 	"fmt"
 	"github.com/spf13/viper"
 	"github.com/zalando/go-keyring"
@@ -60,8 +61,20 @@ func (s *defaultStore) GetFloat64(key string) float64 {
 	return s.viper.GetFloat64(key)
 }
 
+func (s *defaultStore) DeleteSecret(key string) error {
+	err := keyring.Delete(s.keyringServiceName, key)
+	if errors.Is(err, keyring.ErrNotFound) {
+		return nil
+	}
+	return err
+}
+
 func (s *defaultStore) GetSecret(key string) (string, error) {
-	return keyring.Get(s.keyringServiceName, key)
+	v, err := keyring.Get(s.keyringServiceName, key)
+	if err != nil && !errors.Is(err, keyring.ErrNotFound) {
+		return "", err
+	}
+	return v, nil
 }
 
 func (s *defaultStore) SetSecret(key, secret string) error {

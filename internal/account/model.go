@@ -53,3 +53,9 @@ func (l *List) Add(account Account) List {
 	}
 	return *l
 }
+
+func (l *List) Remove(acc Account) {
+	l.Items = slices.DeleteFunc(l.Items, func(a Account) bool {
+		return a.Id == acc.Id
+	})
+}

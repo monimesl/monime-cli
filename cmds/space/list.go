@@ -11,6 +11,7 @@ var listCmd = &cobra.Command{
 	Short: "List all Monimeer Spaces",
 	Long:  ``,
 	RunE: func(cmd *cobra.Command, args []string) error {
+		cmd.SilenceUsage = true
 		return listSpaces(cmd.Context())
 	},
 }

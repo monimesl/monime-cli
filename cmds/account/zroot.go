@@ -10,6 +10,6 @@ var Command = &cobra.Command{
 }
 
 func init() {
-	Command.AddCommand(loginCmd, listCmd)
+	Command.AddCommand(listCmd, loginCmd, logoutCmd)
 
 }

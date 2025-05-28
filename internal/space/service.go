@@ -49,7 +49,7 @@ func (s *Service) ActivateSpace(ctx context.Context, idOrAlias string) error {
 	}
 	spc, ok := list.GetSpace(idOrAlias)
 	if !ok {
-		return fmt.Errorf("space %s does not exist", idOrAlias)
+		return fmt.Errorf("no space with alias '%s' exist", idOrAlias)
 	}
 	if err = s.repository.ActivateSpace(spc); err != nil {
 		return err

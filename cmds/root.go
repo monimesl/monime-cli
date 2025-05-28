@@ -3,10 +3,10 @@ package cmds
 import (
 	"context"
 	"errors"
-	"fmt"
 	"github.com/monimesl/monime-cli/cmds/account"
 	"github.com/monimesl/monime-cli/cmds/simulate"
 	"github.com/monimesl/monime-cli/cmds/space"
+	errors2 "github.com/monimesl/monime-cli/pkg/errors"
 	"github.com/monimesl/monime-cli/pkg/utils/text"
 	"github.com/spf13/cobra"
 	"os"
@@ -20,7 +20,6 @@ var rootCmd = &cobra.Command{
 	Short:         "Monime command line tool for development and utility operations",
 	Version:       "0.1.2",
 	SilenceErrors: true,
-	SilenceUsage:  true,
 	CompletionOptions: cobra.CompletionOptions{
 		DisableDefaultCmd: true,
 	},
@@ -35,7 +34,6 @@ func init() {
 	rootCmd.SetHelpCommand(&cobra.Command{
 		Hidden: true,
 	})
-
 }
 
 func ExecuteRootCmd() {
@@ -55,8 +53,12 @@ func checkError(err error) {
 		msg = "\nCommand cancelled"
 	case errors.Is(err, context.DeadlineExceeded):
 		msg = "\nCommand timed out"
+	case errors.Is(err, errors2.ErrCliSilent):
+		os.Exit(1)
+	case errors.Is(err, errors2.ErrAccountNotAuthenticated):
+		errors2.PrintLoginHint()
+		os.Exit(1)
 	}
-	msg = text.Format(msg, text.FormatOptions{Color: "red"})
-	_, _ = fmt.Fprintln(os.Stderr, msg)
+	text.PrintError(os.Stderr, msg)
 	os.Exit(1)
 }

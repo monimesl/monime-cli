@@ -14,6 +14,7 @@ var listCmd = &cobra.Command{
 This command retrieves and presents information such as Monimeer account ID, name, status, and creation time.
 Useful for administrators or users managing multiple Monimeer accounts.`,
 	RunE: func(cmd *cobra.Command, args []string) error {
+		cmd.SilenceUsage = true
 		return listAccounts(cmd.Context())
 	},
 }

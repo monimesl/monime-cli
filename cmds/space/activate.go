@@ -2,18 +2,29 @@ package space
 
 import (
 	"context"
+	"fmt"
 	"github.com/monimesl/monime-cli/internal/space"
+	errors2 "github.com/monimesl/monime-cli/pkg/errors"
+	"github.com/monimesl/monime-cli/pkg/utils/text"
 	"github.com/spf13/cobra"
+	"os"
 )
 
 var activateCmd = &cobra.Command{
 	Use:   "activate",
 	Short: "",
 	Long:  ``,
-	Args:  cobra.ExactArgs(1),
+	Args: func(cmd *cobra.Command, args []string) error {
+		if len(args) < 1 {
+			text.PrintError(os.Stderr, "\033[1;31mMissing space ID or alias.\033[0m")
+			fmt.Println("   Usage: monime space activate \033[1;33m<space-id>\033[0m")
+			return errors2.ErrCliSilent
+		}
+		return nil
+	},
 	RunE: func(cmd *cobra.Command, args []string) error {
-		idOrAlias := args[0]
-		return activate(cmd.Context(), idOrAlias)
+		cmd.SilenceUsage = true
+		return activate(cmd.Context(), args[0])
 	},
 }
 
