@@ -8,9 +8,9 @@ import (
 
 type Repository interface {
 	ListAccounts(context.Context) (List, error)
-	SaveAccounts(list List) error
-	AddAccount(account Account) error
-	GetAccountById(id string) (Account, bool, error)
+	SaveAccounts(ctx context.Context, list List) error
+	AddAccount(ctx context.Context, account Account) error
+	GetAccountById(ctx context.Context, id string) (Account, bool, error)
 }
 
 const (
@@ -40,17 +40,17 @@ func (r defaultRepository) ListAccounts(context.Context) (List, error) {
 	return list, nil
 }
 
-func (r defaultRepository) SaveAccounts(list List) error {
+func (r defaultRepository) SaveAccounts(_ context.Context, list List) error {
 	return store.Get().SetConfig(accountsField, list)
 }
 
-func (r defaultRepository) AddAccount(account Account) error {
-	list, err := r.ListAccounts(nil)
+func (r defaultRepository) AddAccount(ctx context.Context, account Account) error {
+	list, err := r.ListAccounts(ctx)
 	if err != nil {
 		return err
 	}
 	list.Add(account)
-	if err = r.SaveAccounts(list); err != nil {
+	if err = r.SaveAccounts(ctx, list); err != nil {
 		return err
 	}
 	if err = store.Get().SetSecret(accountIdField, account.Id); err != nil {
@@ -62,8 +62,8 @@ func (r defaultRepository) AddAccount(account Account) error {
 	return nil
 }
 
-func (r defaultRepository) GetAccountById(id string) (Account, bool, error) {
-	list, err := r.ListAccounts(nil)
+func (r defaultRepository) GetAccountById(ctx context.Context, id string) (Account, bool, error) {
+	list, err := r.ListAccounts(ctx)
 	if err != nil {
 		return Account{}, false, err
 	}

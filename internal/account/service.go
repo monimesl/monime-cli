@@ -58,7 +58,7 @@ func (s *Service) Login(ctx context.Context) error {
 	account.Alias = token.Account.Alias
 	account.DateAdded = token.CreateTime
 	account.Reference = gwater.UUID5(token.Account.Id)
-	if err = s.repository.AddAccount(account); err != nil {
+	if err = s.repository.AddAccount(ctx, account); err != nil {
 		return err
 	}
 	alias := text.Format(token.Account.Alias, text.FormatOptions{Bold: true, Color: "green"})
