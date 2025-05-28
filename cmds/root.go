@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"github.com/monimesl/monime-cli/cmds/account"
 	"github.com/monimesl/monime-cli/cmds/simulate"
+	"github.com/monimesl/monime-cli/cmds/space"
 	"github.com/monimesl/monime-cli/pkg/utils"
 	"github.com/spf13/cobra"
 	"os"
@@ -24,6 +25,7 @@ var rootCmd = &cobra.Command{
 
 func init() {
 	rootCmd.AddCommand(
+		space.Command,
 		account.Command,
 		simulate.Command,
 	)

@@ -5,7 +5,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var accountListCmd = &cobra.Command{
+var listCmd = &cobra.Command{
 	Use:   "list",
 	Short: "List all Monimeer accounts",
 	Long: `Displays a list of all Monimeer accounts registered in the system.
