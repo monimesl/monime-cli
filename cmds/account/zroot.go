@@ -1,6 +1,8 @@
 package account
 
-import "github.com/spf13/cobra"
+import (
+	"github.com/spf13/cobra"
+)
 
 var Command = &cobra.Command{
 	Use:   "account",
@@ -9,4 +11,5 @@ var Command = &cobra.Command{
 
 func init() {
 	Command.AddCommand(loginCmd, listCmd)
+
 }

@@ -7,7 +7,7 @@ import (
 	"github.com/monimesl/monime-cli/cmds/account"
 	"github.com/monimesl/monime-cli/cmds/simulate"
 	"github.com/monimesl/monime-cli/cmds/space"
-	"github.com/monimesl/monime-cli/pkg/utils"
+	"github.com/monimesl/monime-cli/pkg/utils/text"
 	"github.com/spf13/cobra"
 	"os"
 	"os/signal"
@@ -56,7 +56,7 @@ func checkError(err error) {
 	case errors.Is(err, context.DeadlineExceeded):
 		msg = "\nCommand timed out"
 	}
-	msg = utils.Format(msg, utils.FormatOptions{Color: "red"})
+	msg = text.Format(msg, text.FormatOptions{Color: "red"})
 	_, _ = fmt.Fprintln(os.Stderr, msg)
 	os.Exit(1)
 }

@@ -1,6 +1,8 @@
 package space
 
 import (
+	"context"
+	"github.com/monimesl/monime-cli/internal/space"
 	"github.com/spf13/cobra"
 )
 
@@ -9,6 +11,14 @@ var listCmd = &cobra.Command{
 	Short: "List all Monimeer Spaces",
 	Long:  ``,
 	RunE: func(cmd *cobra.Command, args []string) error {
-		return nil
+		return listSpaces(cmd.Context())
 	},
+}
+
+func listSpaces(ctx context.Context) error {
+	svc, err := space.NewService()
+	if err != nil {
+		return err
+	}
+	return svc.ShowSpaceList(ctx)
 }
