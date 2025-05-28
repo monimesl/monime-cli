@@ -4,6 +4,7 @@ import (
 	"context"
 	"github.com/monimesl/monime-cli/internal/account"
 	"github.com/spf13/cobra"
+	"time"
 )
 
 var accountLoginCmd = &cobra.Command{
@@ -22,6 +23,13 @@ func login(ctx context.Context) error {
 	svc, err := account.NewService()
 	if err != nil {
 		return err
+	}
+	for {
+		select {
+		case <-ctx.Done():
+			return ctx.Err()
+		case <-time.After(10 * time.Second):
+		}
 	}
 	return svc.Login(ctx)
 }
