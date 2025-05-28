@@ -4,7 +4,7 @@ import "github.com/spf13/cobra"
 
 var Command = &cobra.Command{
 	Use:   "space",
-	Short: "Manage Monimeer Spaces",
+	Short: "Manage Monime spaces",
 }
 
 func init() {

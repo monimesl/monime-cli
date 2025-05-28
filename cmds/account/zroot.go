@@ -6,7 +6,7 @@ import (
 
 var Command = &cobra.Command{
 	Use:   "account",
-	Short: "Manage Monimeer accounts",
+	Short: "Manage Monime accounts",
 }
 
 func init() {
