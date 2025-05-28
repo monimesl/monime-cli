@@ -37,7 +37,6 @@ func newDefaultStore() (Store, error) {
 
 type defaultStore struct {
 	keyringServiceName string
-	viperStoragePath   string
 	viper              *viper.Viper
 }
 
