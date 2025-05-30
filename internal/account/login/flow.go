@@ -94,7 +94,7 @@ func (f *Flow) launchInteraction(ctx context.Context, publicKey, state string) (
 		return SecuredToken{}, err
 	}
 	fmt.Println("🔐 Opening browser for login...")
-	if _, err := browser.OpenURL(authURL); err != nil {
+	if _, err = browser.OpenURL(authURL); err != nil {
 		return SecuredToken{}, fmt.Errorf("failed to open browser: %w", err)
 	}
 	fmt.Printf("🌐 Listening on %s\n", callbackURL)

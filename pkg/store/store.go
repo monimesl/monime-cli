@@ -7,6 +7,7 @@ var (
 )
 
 type Store interface {
+	DeleteSecret(key string) error
 	GetSecret(key string) (string, error)
 	SetSecret(key, secret string) error
 	SetConfig(key string, value any) error

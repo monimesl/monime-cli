@@ -1,12 +1,15 @@
 package account
 
-import "github.com/spf13/cobra"
+import (
+	"github.com/spf13/cobra"
+)
 
 var Command = &cobra.Command{
 	Use:   "account",
-	Short: "Manage Monimeer accounts",
+	Short: "Manage Monime accounts",
 }
 
 func init() {
-	Command.AddCommand(accountLoginCmd, accountListCmd)
+	Command.AddCommand(listCmd, loginCmd, logoutCmd)
+
 }

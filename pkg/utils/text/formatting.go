@@ -1,6 +1,10 @@
-package utils
+package text
 
 import "fmt"
+
+func FormatToGreen(s string) string {
+	return Format(s, FormatOptions{Color: "green"})
+}
 
 type FormatOptions struct {
 	Color string // green, red, yellow
