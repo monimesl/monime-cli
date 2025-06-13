@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { TunnelPopover } from "./TunnelPopover";
 import { SimulateEventPopover } from "./SimulateEventPopover";
 import { EventsPopover } from "./EventsPopover";
+import appIcon from "@/assets/images/appicon.png";
 
 interface WebhookHeaderProps {
 	webhookUrl: string;
@@ -49,7 +50,7 @@ export function WebhookHeader({
 			<div className="flex items-center justify-between">
 				<div className="flex items-center space-x-4">
 					<div className="flex items-center space-x-2">
-						<img src="/monime-logo.png" alt="Monime Logo" className="w-8 h-8" />
+						<img src={appIcon} alt="Monime Logo" className="w-8 h-8" />
 						<h1 className="text-lg font-semibold text-foreground">Monime Webhook</h1>
 					</div>
 				</div>
