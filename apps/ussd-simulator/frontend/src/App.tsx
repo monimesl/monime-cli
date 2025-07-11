@@ -1,8 +1,50 @@
-import PhoneKeyPadScreen from "@/components/PhoneKeyPadScreen.tsx";
-import USSDPromptScreen from "./components/USSDPromptScreen";
-import Frame from "./components/Frame";
+import {useEffect} from "react";
+import {newConfig} from "@/model/config";
+import {newSession} from "@/model/session";
+import ReplyScreen from "@/screens/ReplyScreen.tsx";
+import PromptScreen from "@/screens/PromptScreen.tsx";
+import DialPadScreen from "@/screens/DialPadScreen.tsx";
+import LoadingScreen from "@/screens/LoadingScreen.tsx";
+import ConfigProvider from "@/model/config/provider.tsx";
+import TerminalScreen from "@/screens/TerminalScreen.tsx";
+import ScreenContainer from "@/components/ScreenContainer.tsx";
+import SessionProvider, {useSession} from "@/model/session/provider.tsx";
 
 export default function App() {
-	// return <USSDPromptScreen />;
-	return <PhoneKeyPadScreen />;
+    return (
+        <ConfigProvider config={newConfig()}>
+            <SessionProvider session={newSession()}>
+                <Screen/>
+            </SessionProvider>
+        </ConfigProvider>
+    )
+}
+
+
+const Screen = () => {
+    const {session} = useSession();
+    useEffect(() => {
+        console.log("session", session);
+    }, [session]);
+    const renderScreen = () => {
+        switch (session.screen) {
+            case 'dial-pad':
+                return <DialPadScreen/>
+            case 'loading':
+                return <LoadingScreen/>
+            case 'reply':
+                return <ReplyScreen/>
+            case 'feedback':
+                return <PromptScreen/>
+            case 'terminal':
+                return <TerminalScreen/>
+            default:
+                return session.screen
+        }
+    }
+    return (
+        <ScreenContainer>
+            {renderScreen()}
+        </ScreenContainer>
+    )
 }

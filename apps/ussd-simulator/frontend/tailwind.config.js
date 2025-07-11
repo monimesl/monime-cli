@@ -65,8 +65,13 @@ module.exports = {content: [
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: 0 },
         },
+        'spinner': {
+          '0%, 39%, 100%': {opacity: 0},
+          '40%': {opacity: 1},
+        },
       },
       animation: {
+        'spinner': 'spinner 0.6s linear infinite',
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "caret-blink": "caret-blink 1.25s ease-out infinite",
