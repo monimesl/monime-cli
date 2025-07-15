@@ -2,7 +2,7 @@ import {useEffect} from "react";
 import {newConfig} from "@/model/config";
 import {newSession} from "@/model/session";
 import ReplyScreen from "@/screens/ReplyScreen.tsx";
-import PromptScreen from "@/screens/PromptScreen.tsx";
+import FeedbackScreen from "@/screens/FeedbackScreen.tsx";
 import DialPadScreen from "@/screens/DialPadScreen.tsx";
 import LoadingScreen from "@/screens/LoadingScreen.tsx";
 import ConfigProvider from "@/model/config/provider.tsx";
@@ -35,7 +35,7 @@ const Screen = () => {
             case 'reply':
                 return <ReplyScreen/>
             case 'feedback':
-                return <PromptScreen/>
+                return <FeedbackScreen/>
             case 'terminal':
                 return <TerminalScreen/>
             default:

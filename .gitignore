@@ -27,3 +27,7 @@ go.work.sum
 
 pkg/ussd-simulator/build
 pkg/webhook/build
+# Added by goreleaser init:
+dist/
+
+apple

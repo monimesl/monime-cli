@@ -4,6 +4,7 @@ import {useCallback, useMemo, useState} from "react";
 import {Delete, PhoneCall} from "lucide-react";
 import {Button} from "@/components/ui/button.tsx";
 import {useSession} from "@/model/session/provider.tsx";
+import {uuid4} from "@monime-lab/twater2/uuid";
 
 
 const dialPadNumbers = [
@@ -40,7 +41,9 @@ export default function DialPadScreen() {
     const handleCall = () => {
         if(!ussdCode)return
         setSession({
+            id: '',
             screen: 'loading',
+            idempotency: uuid4(),
             inputs: {
                 reply: '',
                 ussdCode: ussdCode
@@ -49,7 +52,6 @@ export default function DialPadScreen() {
     }
     return (
         <div className="flex-1 flex flex-col px-4 py-6">
-            {/* Dialed Number Display */}
             <div className="text-center mb-8 mt-4">
                 <input
                     type="tel"
@@ -71,7 +73,6 @@ export default function DialPadScreen() {
                     autoComplete="tel"
                 />
             </div>
-            {/* Dial Pad */}
             <div className="flex-1 flex flex-col justify-center">
                 <div className="grid grid-cols-3 place-items-center justify-center gap-4 mx-auto w-full">
                     {dialPadNumbers.map((item, index) => (

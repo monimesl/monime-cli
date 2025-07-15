@@ -1,0 +1,283 @@
+name: USSD Simulator Release
+concurrency:
+  cancel-in-progress: true
+  group: ${{ github.workflow }}-${{ github.ref_name }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag_name:
+        description: 'Tag name for the release'
+        required: true
+        type: string
+      release:
+        description: "Whether to create a GitHub Release"
+        required: false
+        default: true
+        type: boolean
+
+env:
+  GO_VERSION: '1.23.1'
+  NODE_VERSION: '18'
+  APP_NAME: 'Monime 715'
+  WAILS_VERSION: 'latest'
+  APP_BINARY_NAME: 'monime-715'
+  APP_MACOS_ARTIFACT_NAME: 'Monime_715_macOS'
+
+jobs:
+  build:
+    name: Build ${{ matrix.os }}-${{ matrix.arch }}
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 45
+
+    permissions:
+      contents: read
+      packages: read
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: macos
+            arch: universal
+            platform: darwin
+            runner: macos-latest
+            ext: ""
+          - os: linux
+            arch: amd64
+            platform: linux
+            runner: ubuntu-latest
+            ext: ""
+          - os: linux
+            arch: arm64
+            platform: linux
+            runner: ubuntu-24.04-arm
+            ext: ""
+          # - os: windows
+          #   arch: amd64
+          #   platform: windows
+          #   runner: windows-latest
+          #   ext: ".exe"
+
+    outputs:
+      version: ${{ steps.build-vars.outputs.version }}
+      commit_hash: ${{ steps.build-vars.outputs.commit_hash }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.ACCESS_TOKEN_GITHUB }}
+
+      - name: Set build variables
+        id: build-vars
+        shell: bash
+        run: |
+          VERSION=${GITHUB_REF_NAME#v}
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          
+          COMMIT_HASH=${GITHUB_SHA:0:8}
+          echo "COMMIT_HASH=$COMMIT_HASH" >> $GITHUB_ENV
+          echo "commit_hash=$COMMIT_HASH" >> $GITHUB_OUTPUT
+          
+          echo "BUILD_DATE=$(date -u +%Y-%m-%dT%H:%M:%SZ)" >> $GITHUB_ENV
+          echo "BUILD_NUMBER=${GITHUB_RUN_NUMBER}" >> $GITHUB_ENV
+
+      - name: Setup build environment
+        uses: ./.github/actions/setup-build-env
+        with:
+          go-version: ${{ env.GO_VERSION }}
+          node-version: ${{ env.NODE_VERSION }}
+          wails-version: ${{ env.WAILS_VERSION }}
+          access-token: ${{ secrets.ACCESS_TOKEN_GITHUB }}
+          platform: ${{ matrix.os }}
+
+      - name: Install frontend dependencies
+        shell: bash
+        run: |
+          cd apps/ussd-simulator/frontend
+          npm ci --prefer-offline --no-audit --no-fund
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.ACCESS_TOKEN_GITHUB }}
+        timeout-minutes: 10
+
+      - name: Build Wails application
+        shell: bash
+        run: |
+          cd apps/ussd-simulator
+
+          LDFLAGS="-s -w"
+          LDFLAGS="$LDFLAGS -X main.version=${{ env.VERSION }}"
+          LDFLAGS="$LDFLAGS -X main.commit=${{ env.COMMIT_HASH }}"
+          LDFLAGS="$LDFLAGS -X main.buildDate=${{ env.BUILD_DATE }}"
+          LDFLAGS="$LDFLAGS -X main.buildNumber=${{ env.BUILD_NUMBER }}"
+
+          wails build \
+            -platform ${{ matrix.platform }}/${{ matrix.arch }} \
+            -ldflags "$LDFLAGS" \
+            -clean \
+            -trimpath \
+            -v 2
+        timeout-minutes: 20
+
+      - name: Verify build output
+        uses: ./.github/actions/verify-build
+        with:
+          platform: ${{ matrix.platform }}
+          build-path: apps/ussd-simulator/build/bin
+
+
+      - name: Sign and notarize macOS build
+        if: matrix.os == 'macos'
+        uses: ./.github/actions/macos-sign-notarize
+        with:
+          app-path: "apps/ussd-simulator/build/bin/${{ env.APP_NAME }}.app"
+          app-entitlement_plist: "apps/ussd-simulator/build/darwin/entitlements.plist"
+          apple-developer-id: ${{ secrets.APPLE_DEVELOPER_ID }}
+          apple-cert: ${{ secrets.APPLE_APPLICATION_CERT }}
+          apple-cert-password: ${{ secrets.APPLE_APPLICATION_CERT_PASSWORD }}
+          apple-id: ${{ secrets.APPLE_ID }}
+          apple-team-id: ${{ secrets.APPLE_TEAM_ID }}
+          apple-id-password: ${{ secrets.APPLE_ID_PASSWORD }}
+
+      - name: Package build artifacts
+        id: package
+        shell: bash
+        run: |
+          mkdir -p release
+          
+          cat > release/BUILD_INFO.txt << EOF
+          Version: ${{ env.VERSION }}
+          Commit: ${{ env.COMMIT_HASH }}
+          Build Date: ${{ env.BUILD_DATE }}
+          Build Number: ${{ env.BUILD_NUMBER }}
+          Platform: ${{ matrix.platform }}/${{ matrix.arch }}
+          EOF
+
+          if [ "${{ matrix.platform }}" = "darwin" ]; then
+            cp -r "apps/ussd-simulator/build/bin/${{ env.APP_NAME }}.app" release/
+          else
+            cp apps/ussd-simulator/build/bin/* release/
+          fi
+
+          cd release
+          if command -v sha256sum &> /dev/null; then
+            find . -type f \( ! -name "checksums.txt" \) -exec sha256sum {} \; > checksums.txt
+          else
+            find . -type f \( ! -name "checksums.txt" \) -exec shasum -a 256 {} \; > checksums.txt
+          fi
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.APP_BINARY_NAME }}-${{ matrix.platform }}-${{ matrix.arch }}
+          path: release/
+          retention-days: 30
+          compression-level: 9
+
+  github_release:
+    name: Github Release
+    needs: [ build ]
+    if: inputs.release
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts/
+
+      - name: Package release assets
+        id: package_release_assets
+        run: |
+          mkdir -p release-assets
+          cd artifacts
+          
+          for dir in ${{ env.APP_BINARY_NAME }}-*; do
+            if [ -d "$dir" ]; then
+              echo "Processing $dir..."
+              cd "$dir"
+          
+              case "$dir" in
+                *windows*)
+                  zip -r "../../release-assets/${dir}.zip" . -x "*.txt"
+                  [ -f "BUILD_INFO.txt" ] && cp "BUILD_INFO.txt" "../../release-assets/${dir}-BUILD_INFO.txt"
+                  ;;
+                *darwin*)
+                  echo "mac_asset_exists=true" >> "$GITHUB_OUTPUT"
+                  tar -czf "../../release-assets/${dir}.tar.gz" .
+                  if [ -d "${{ env.APP_NAME }}.app" ]; then
+                    zip -r "../../release-assets/${APP_MACOS_ARTIFACT_NAME}.zip" "${{ env.APP_NAME }}.app"
+                    [ -f "BUILD_INFO.txt" ] && cp "BUILD_INFO.txt" "../../release-assets/${APP_MACOS_ARTIFACT_NAME}-BUILD_INFO.txt"
+                  fi
+                  ;;
+                *linux*)
+                  tar -czf "../../release-assets/${dir}.tar.gz" .
+                  [ -f "BUILD_INFO.txt" ] && cp "BUILD_INFO.txt" "../../release-assets/${dir}-BUILD_INFO.txt"
+                  ;;
+              esac
+          
+              cd ..
+            fi
+          done
+
+      - name: Upload release assets
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            release-assets/*.zip
+            release-assets/*.tar.gz
+            release-assets/*.txt
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN_GITHUB }}
+
+
+  cask_release:
+    name: (MacOS) Homebrew Release
+    needs: [ github_release ]
+    runs-on: macos-latest
+    if: inputs.release
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout application repository
+        uses: actions/checkout@v4
+
+      - name: Setup release information
+        id: release-info
+        run: |
+          VERSION="${{ inputs.tag_name }}"
+          VERSION="${VERSION#v}"
+          echo "VERSION=$VERSION" >> "$GITHUB_OUTPUT"
+          
+          ASSET_URL="https://github.com/${{ github.repository }}/releases/download/v${VERSION}/${APP_MACOS_ARTIFACT_NAME}.zip"
+          echo "ASSET_URL=$ASSET_URL" >> "$GITHUB_OUTPUT"
+
+      - name: Calculate asset checksum
+        id: checksum
+        run: |
+          curl -L -o "${APP_MACOS_ARTIFACT_NAME}_macOS.zip" "${{ steps.release-info.outputs.ASSET_URL }}"
+          CHECKSUM=$(shasum -a 256 "${APP_MACOS_ARTIFACT_NAME}_macOS.zip" | awk '{print $1}')
+          echo "SHA256=$CHECKSUM" >> "$GITHUB_OUTPUT"
+
+      - name: Update Homebrew tap
+        uses: ./.github/actions/update-homebrew-cask
+        with:
+          tap-repository: monimesl/homebrew-monime-cli
+          cask-name: ${{ env.APP_BINARY_NAME }}
+          version: ${{ steps.release-info.outputs.VERSION }}
+          sha256: ${{ steps.checksum.outputs.SHA256 }}
+          url: ${{ steps.release-info.outputs.ASSET_URL }}
+          access-token: ${{ secrets.ACCESS_TOKEN_GITHUB }}
+          app-name: ${{ env.APP_NAME }}
+          app-description: "Test and debug USSD flows (including payment code) in real time — no mobile device required."
+          app-homepage: "https://monime.io"
+          app-bundle-name: "${{ env.APP_NAME }}.app"
+          app-executable-name: ${{ env.APP_BINARY_NAME }}

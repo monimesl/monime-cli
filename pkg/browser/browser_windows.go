@@ -1,5 +1,14 @@
 package browser
 
-func open(url string) error {
-	return windows.ShellExecute(0, nil, windows.StringToUTF16Ptr(url), nil, nil, windows.SW_SHOWNORMAL)
+import (
+	"errors"
+	"os/exec"
+)
+
+func open(url string) (Command, error) {
+	cmd, err := runCmd("rundll32", "url.dll,FileProtocolHandler", url)
+	if e, ok := err.(*exec.Error); ok && e.Err == exec.ErrNotFound {
+		return nil, errors.New("rundll32 url.dll,FileProtocolHandler not found")
+	}
+	return cmd, err
 }

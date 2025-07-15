@@ -45,12 +45,12 @@ github.com/mattn/go-isatty v0.0.19 h1:JITubQf0MOLdlGRuRq+jtsDlekdYPia9ZFsB8h/APP
 github.com/mattn/go-isatty v0.0.19/go.mod h1:W+V8PltTTMOvKvAeJH7IuucS94S2C6jfK/D7dTCTo3Y=
 github.com/mattn/go-runewidth v0.0.16 h1:E5ScNMtiwvlvB5paMFdw9p4kSQzbXFikJ5SQO6TULQc=
 github.com/mattn/go-runewidth v0.0.16/go.mod h1:Jdepj2loyihRzMpdS35Xk/zdY8IAYHsh153qUoGf23w=
-github.com/monime-lab/gok v0.0.0-20241106111735-f8ac2f9bf647 h1:qBUvljTwdf9NSKIqKyhz08BMvB3+jiqNgqx0DT28u+c=
-github.com/monime-lab/gok v0.0.0-20241106111735-f8ac2f9bf647/go.mod h1:6hBqkgEMe9DYRpxaG0YBXAi38cby/Gums2L0GlxGEXo=
+github.com/monime-lab/gok v0.0.0-20250701051803-012a96297e2e h1:GP9Zu1+HQCHHfupgsRG7CHhY3bQ7mt9yXYiU/14vIp8=
+github.com/monime-lab/gok v0.0.0-20250701051803-012a96297e2e/go.mod h1:6hBqkgEMe9DYRpxaG0YBXAi38cby/Gums2L0GlxGEXo=
 github.com/monime-lab/gotries v0.1.2-0.20230722030820-0e8efc082234 h1:vEISs16n3FwlEulXGgCjp73jubgBevftmBipx5tVmAY=
 github.com/monime-lab/gotries v0.1.2-0.20230722030820-0e8efc082234/go.mod h1:J/j6v36GCr4nlzoeIqvpvma/woGFZVo13dkEH1BcsQY=
-github.com/monime-lab/gwater v0.0.0-20241129071209-41184a6790fa h1:qa6bFQvKldIbHgeT8D+2sG87qC4kLtxAn7U5DmRPJ4k=
-github.com/monime-lab/gwater v0.0.0-20241129071209-41184a6790fa/go.mod h1:/asNpc6bW0wvCAddpnOQcTX3OlFA8eC6gazFwLqahqs=
+github.com/monime-lab/gwater v0.0.0-20250625051747-596586865b91 h1:QxARMyO8cRUTpMKCE5v2f5dVHw/gyxOwqgXRFNxCA1Q=
+github.com/monime-lab/gwater v0.0.0-20250625051747-596586865b91/go.mod h1:/asNpc6bW0wvCAddpnOQcTX3OlFA8eC6gazFwLqahqs=
 github.com/monime-lab/sgdns-go v0.0.0-20231102164324-5f4152ddc71d h1:LDLuDhlMidVVcqRk7yBAdp17ZHQR4dUFtUJLMixQJbE=
 github.com/monime-lab/sgdns-go v0.0.0-20231102164324-5f4152ddc71d/go.mod h1:56m4m9uH1D6gz/6oPpUFbyONbyfwstFmGtWIdkSze7k=
 github.com/monime-lab/web-client-go v0.0.0-20250507073720-03ce4bc25de7 h1:hvr+SEvcdO0254X2mSqti2AG69y+KKKGgGCEbo/7LSI=
@@ -59,6 +59,8 @@ github.com/monime-lab/zk v0.0.0-20231028060011-d68b7a35ffe1 h1:E5A9MNYDNg9Q78QgF
 github.com/monime-lab/zk v0.0.0-20231028060011-d68b7a35ffe1/go.mod h1:nbJQRysiATvV1g/JH9+x033eDMokp2lsPlpynVmoz24=
 github.com/monime-lab/zk-client v0.0.0-20231102161235-15bf62cfae10 h1:TIYOu3yMtQ70Yi4FcO1gaHLTH/XbIhe+ygxghvQuOFQ=
 github.com/monime-lab/zk-client v0.0.0-20231102161235-15bf62cfae10/go.mod h1:7Ct6vKVSqkIhJ6i5r0ZtBhG9GkO3TbENSgR4aceS2nA=
+github.com/monimesl/monime-cli/cli-utils v0.0.0-20250713060014-dc611bf56330 h1:JsLlD+Z1ySMPrxjzkitdbc+ySIA9KGEwLhSIiEBuh/Q=
+github.com/monimesl/monime-cli/cli-utils v0.0.0-20250713060014-dc611bf56330/go.mod h1:8fmnLRKNp6bREynRz58FsN9Ywd6uYAxkrvpuzgEHdvc=
 github.com/olekukonko/errors v0.0.0-20250405072817-4e6d85265da6 h1:r3FaAI0NZK3hSmtTDrBVREhKULp8oUeqLT5Eyl2mSPo=
 github.com/olekukonko/errors v0.0.0-20250405072817-4e6d85265da6/go.mod h1:ppzxA5jBKcO1vIpCXQ9ZqgDh8iwODz6OXIGKU8r5m4Y=
 github.com/olekukonko/ll v0.0.8-0.20250516010636-22ea57d81985 h1:V2wKiwjwAfRJRtUP6pC7wt4opeF14enO0du2dRV6Llo=

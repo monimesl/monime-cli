@@ -1,0 +1,65 @@
+version: "2"
+linters:
+  default: none
+  enable:
+    - asciicheck
+    - bidichk
+    - bodyclose
+    - cyclop
+    - dogsled
+    - dupl
+    - durationcheck
+    - errcheck
+    - errname
+    - errorlint
+    - exhaustive
+    - gocognit
+    - goconst
+    - gocritic
+    - gocyclo
+    - gomodguard
+    - importas
+    - ineffassign
+    - makezero
+    - nakedret
+    - nilerr
+    - nilnil
+    - noctx
+    - nolintlint
+    - paralleltest
+    - prealloc
+    - predeclared
+    - staticcheck
+    - unconvert
+    - unused
+    - whitespace
+  exclusions:
+    generated: lax
+    presets:
+      - comments
+      - common-false-positives
+      - legacy
+      - std-error-handling
+    rules:
+      - path: (.+)\.go$
+        text: SA1019
+      - path: (.+)\.go$
+        text: ST1003
+      - path: (.+)\.go$
+        text: regexpMust
+      - linters:
+          - staticcheck
+        text: "QF1008:"
+    paths:
+      - third_party$
+      - builtin$
+      - examples$
+formatters:
+  enable:
+    - gofmt
+  exclusions:
+    generated: lax
+    paths:
+      - third_party$
+      - builtin$
+      - examples$

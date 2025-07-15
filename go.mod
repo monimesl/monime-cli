@@ -1,11 +1,10 @@
 module github.com/monimesl/monime-cli
 
-go 1.24
+go 1.23.1
 
 require (
-	github.com/monime-lab/gok v0.0.0-20241106111735-f8ac2f9bf647
-	github.com/monime-lab/gwater v0.0.0-20241129071209-41184a6790fa
-	github.com/monime-lab/web-client-go v0.0.0-20250507073720-03ce4bc25de7
+	github.com/monime-lab/gwater v0.0.0-20250625051747-596586865b91
+	github.com/monimesl/monime-cli/cli-utils v0.0.0-20250713060014-dc611bf56330
 	github.com/olekukonko/tablewriter v1.0.6
 	github.com/spf13/cobra v1.9.1
 	github.com/spf13/viper v1.20.1
@@ -30,8 +29,10 @@ require (
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.19 // indirect
 	github.com/mattn/go-runewidth v0.0.16 // indirect
+	github.com/monime-lab/gok v0.0.0-20250701051803-012a96297e2e // indirect
 	github.com/monime-lab/gotries v0.1.2-0.20230722030820-0e8efc082234 // indirect
 	github.com/monime-lab/sgdns-go v0.0.0-20231102164324-5f4152ddc71d // indirect
+	github.com/monime-lab/web-client-go v0.0.0-20250507073720-03ce4bc25de7 // indirect
 	github.com/monime-lab/zk v0.0.0-20231028060011-d68b7a35ffe1 // indirect
 	github.com/monime-lab/zk-client v0.0.0-20231102161235-15bf62cfae10 // indirect
 	github.com/olekukonko/errors v0.0.0-20250405072817-4e6d85265da6 // indirect

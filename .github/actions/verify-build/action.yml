@@ -1,0 +1,46 @@
+name: 'Verify Build Output'
+description: 'Verifies that build artifacts were created correctly'
+
+inputs:
+  platform:
+    description: 'Build platform'
+    required: true
+  build-path:
+    description: 'Path to build output directory'
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: Verify build output
+      shell: bash
+      run: |
+        echo "Build directory contents:"
+        ls -la ${{ inputs.build-path }}/
+
+        case "${{ inputs.platform }}" in
+          windows)
+            if [ -f "${{ inputs.build-path }}/"*".exe" ]; then
+              echo "✅ Windows executable found"
+            else
+              echo "❌ Windows executable not found"
+              exit 1
+            fi
+            ;;
+          darwin)
+            if [ -d "${{ inputs.build-path }}/"*".app" ]; then
+              echo "✅ macOS app bundle found"
+            else
+              echo "❌ macOS app bundle not found"
+              exit 1
+            fi
+            ;;
+          linux)
+            if [ -f "${{ inputs.build-path }}/"* ]; then
+              echo "✅ Linux executable found"
+            else
+              echo "❌ Linux executable not found"
+              exit 1
+            fi
+            ;;
+        esac

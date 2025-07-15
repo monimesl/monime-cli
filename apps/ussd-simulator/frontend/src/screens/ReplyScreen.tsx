@@ -4,12 +4,13 @@ import {useState} from "react";
 import {newSession} from "@/model/session";
 import {Button} from "@/components/ui/button.tsx";
 import {useSession} from "@/model/session/provider.tsx";
+import {uuid4} from "@monime-lab/twater2/uuid";
 
 const maxCharacters = 182;
 
 
 export default function ReplyScreen() {
-    const { setSession } = useSession();
+    const { session, setSession } = useSession();
     const [reply, setReply] = useState("");
 
     const handleCancel = () => {
@@ -23,6 +24,7 @@ export default function ReplyScreen() {
         if (!sanitizedReply)return
         setSession({
             screen: 'loading',
+            idempotency: uuid4(),
             inputs: {
                 reply: sanitizedReply,
             }
@@ -57,31 +59,16 @@ export default function ReplyScreen() {
                         </Button>
                     </div>
                 </div>
-
-                {/* Message Content */}
                 <div className="flex-1 px-4 py-6 text-center">
                     <div className="text-white mt-10">
-                        <div className="text-sm leading-relaxed">
-                            Monime<br/>
-                            You are about to pay Sulailas Multi Cuisine Restaurant
-                            <br/>
-                            1: Confirm
-                            <br/>
-                            2: Cancel
-                            <br/>
-                            <br/>- - -
-                            <br/>
-                            <br/>
-                            00:menu
-                            <br/>
-                            0:back
-                        </div>
+                        <p className="text-sm leading-relaxed" dangerouslySetInnerHTML={{
+                            __html: session.outputs?.message || "",
+                        }}></p>
                     </div>
                 </div>
-
-                {/* Input Field */}
                 <div className="px-4 mb-4 w-full">
                     <textarea
+                        autoFocus={true}
                         value={reply}
                         onChange={(e) => setReply(e.target.value)}
                         placeholder="Type your reply..."

@@ -1,0 +1,86 @@
+name: 'Setup Build Environment'
+description: 'Sets up Go, Node.js, and Wails for building'
+
+inputs:
+  go-version:
+    description: 'Go version to install'
+    required: true
+  node-version:
+    description: 'Node.js version to install'
+    required: true
+  wails-version:
+    description: 'Wails version to install'
+    required: true
+  access-token:
+    description: 'GitHub access token for private repos'
+    required: true
+  platform:
+    description: 'Operating system platform'
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: Setup Go
+      uses: actions/setup-go@v5
+      with:
+        go-version: ${{ inputs.go-version }}
+        cache: true
+        cache-dependency-path: |
+          **/go.sum
+          **/go.mod
+
+    - name: Configure Git for private repos
+      shell: bash
+      run: |
+        git config --global url."https://${{ inputs.access-token }}:@github.com/".insteadOf "https://github.com/"
+
+    - name: Setup Go private module access
+      shell: bash
+      run: |
+        echo "GOPRIVATE=github.com/momime-lab/*" >> $GITHUB_ENV
+        echo "GOPROXY=direct" >> $GITHUB_ENV
+        echo "GOSUMDB=off" >> $GITHUB_ENV
+        echo "CGO_ENABLED=1" >> $GITHUB_ENV
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ inputs.node-version }}
+        registry-url: 'https://npm.pkg.github.com'
+        cache: 'npm'
+        cache-dependency-path: '**/package-lock.json'
+
+    - name: Cache Wails binary
+      uses: actions/cache@v4
+      with:
+        path: |
+          ~/go/bin/wails*
+          ~/.local/share/wails
+        key: ${{ runner.os }}-wails-${{ inputs.wails-version }}-${{ hashFiles('**/wails.json', '**/go.mod') }}
+        restore-keys: |
+          ${{ runner.os }}-wails-${{ inputs.wails-version }}-
+          ${{ runner.os }}-wails-
+
+    - name: Install Wails
+      shell: bash
+      run: |
+        if command -v wails &> /dev/null; then
+          echo "Wails found in cache: $(wails version)"
+        else
+          echo "Installing Wails..."
+          go install -v github.com/wailsapp/wails/v2/cmd/wails@${{ inputs.wails-version }}
+          echo "Wails installed: $(wails version)"
+        fi
+
+    - name: Install Linux dependencies
+      if: inputs.platform == 'linux'
+      shell: bash
+      run: |
+        sudo apt-get update -qq
+        sudo apt-get install -y \
+          libgtk-3-dev \
+          libwebkit2gtk-4.1-dev \
+          pkg-config \
+          build-essential
+        sudo ln -sf /usr/lib/x86_64-linux-gnu/pkgconfig/webkit2gtk-4.1.pc /usr/lib/x86_64-linux-gnu/pkgconfig/webkit2gtk-4.0.pc

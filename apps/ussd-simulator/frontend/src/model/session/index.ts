@@ -1,7 +1,8 @@
 import {uuid4} from "@monime-lab/twater2/uuid";
 
 export type Session = {
-    id: string
+    id?: string;
+    idempotency?: string;
     screen?: 'dial-pad' | 'loading' | 'feedback' | 'reply' | 'terminal'
     inputs?: {
         reply?: string
@@ -14,7 +15,7 @@ export type Session = {
 
 export const newSession = (screen?: Session['screen']): Session => {
     return {
-        id: uuid4(),
+        idempotency: uuid4(),
         screen: screen || 'dial-pad',
     } as Session
 }

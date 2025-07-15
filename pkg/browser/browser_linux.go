@@ -1,5 +1,10 @@
 package browser
 
+import (
+	"os/exec"
+	"strings"
+)
+
 func open(url string) (Command, error) {
 	programs := []string{"xdg-open", "x-www-browser", "www-browser"}
 	for _, provider := range programs {
@@ -7,5 +12,5 @@ func open(url string) (Command, error) {
 			return runCmd(provider, url)
 		}
 	}
-	return &exec.Error{Name: strings.Join(programs, ","), Err: exec.ErrNotFound}
+	return nil, &exec.Error{Name: strings.Join(programs, ","), Err: exec.ErrNotFound}
 }

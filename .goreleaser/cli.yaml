@@ -1,0 +1,85 @@
+# GoReleaser configuration for cross-platform CLI builds
+# https://goreleaser.com/
+
+version: 2
+
+project_name: monime
+
+checksum:
+  disable: true
+  
+changelog:
+  disable: true
+
+before:
+  hooks:
+    - go mod tidy
+    - go generate ./...
+
+builds:
+  - id: mac-build
+    binary: monime
+    main: ./cmd/monime/main.go
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - darwin
+    goarch:
+      - amd64
+      - arm64
+    flags:
+      - -trimpath
+    ldflags:
+      - -s -w
+      - -X main.version={{.Version}}
+      - -X main.commit={{.Commit}}
+      - -X main.date={{.Date}}
+      - -X main.builtBy=goreleaser
+
+  - id: linux-build
+    binary: monime
+    main: ./cmd/monime/main.go
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+    goarch:
+      - amd64
+      - arm64
+    flags:
+      - -trimpath
+    ldflags:
+      - -s -w
+      - -X main.version={{.Version}}
+      - -X main.commit={{.Commit}}
+      - -X main.date={{.Date}}
+      - -X main.builtBy=goreleaser
+
+archives:
+  - id: mac-archive
+    builds: [mac-build]
+    name_template: "monime_cli_{{ .Version }}_macOS_{{ .Arch }}"
+    wrap_in_directory: true
+    files:
+      - none*
+  - id: linux-archive
+    builds: [linux-build]
+    name_template: "monime_cli_{{ .Version }}_linux_{{ .Arch }}"
+    wrap_in_directory: true
+    files:
+      - none*
+
+release:
+  draft: true
+  mode: 'keep-existing'
+  replace_existing_artifacts: true
+
+brews:
+  - name: monime
+    ids:
+      - mac-archive
+    repository:
+      owner: monimesl
+      name: homebrew-monime-cli
+    homepage: "https://monime.io"
+    license: Apache 2.0

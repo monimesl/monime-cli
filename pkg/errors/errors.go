@@ -6,9 +6,8 @@ import (
 )
 
 var (
-	ErrCliSilent               = errors.New("cli silent")
-	ErrNoActivateSpace         = errors.New("no activate space")
-	ErrAccountNotAuthenticated = errors.New("no authenticated")
+	ErrCliSilent       = errors.New("cli silent")
+	ErrNoActivateSpace = errors.New("no activate space")
 )
 
 func PrintLoginHint() {

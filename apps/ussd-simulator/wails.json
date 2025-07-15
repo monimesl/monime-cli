@@ -1,13 +1,14 @@
 {
   "$schema": "https://wails.io/schemas/config.v2.json",
-  "name": "ussd-simulator",
-  "outputfilename": "ussd-simulator",
+  "name": "Monime 715",
+  "outputfilename": "monime-715",
   "frontend:install": "npm install",
   "frontend:build": "npm run build",
   "frontend:dev:watcher": "npm run dev",
   "frontend:dev:serverUrl": "auto",
-  "author": {
-    "name": "Alpha Shaw",
-    "email": "shawalpha5@gmail.com"
+  "info": {
+    "companyName": "Monime Limited",
+    "productName": "Monime *715#",
+    "productVersion": "1.0.0"
   }
 }

@@ -1,26 +1,30 @@
 export namespace ussdgateway {
 	
-	export class ReplyRequest {
+	export class ExchangeRequest {
+	    networkId: string;
 	    sessionId: string;
-	    replyMessage: string;
+	    replyData: string;
+	    initialUssdCode: string;
 	
 	    static createFrom(source: any = {}) {
-	        return new ReplyRequest(source);
+	        return new ExchangeRequest(source);
 	    }
 	
 	    constructor(source: any = {}) {
 	        if ('string' === typeof source) source = JSON.parse(source);
+	        this.networkId = source["networkId"];
 	        this.sessionId = source["sessionId"];
-	        this.replyMessage = source["replyMessage"];
+	        this.replyData = source["replyData"];
+	        this.initialUssdCode = source["initialUssdCode"];
 	    }
 	}
-	export class ReplyResponse {
+	export class ExchangeResponse {
 	    sessionId: string;
 	    terminate: boolean;
 	    responseMessage: string;
 	
 	    static createFrom(source: any = {}) {
-	        return new ReplyResponse(source);
+	        return new ExchangeResponse(source);
 	    }
 	
 	    constructor(source: any = {}) {

@@ -1,0 +1,76 @@
+name: 'macOS Sign and Notarize'
+description: 'Signs and notarizes macOS applications'
+
+inputs:
+  app-path:
+    description: 'Path to the .app bundle'
+    required: true
+  app-entitlement_plist:
+    description: 'Path to the entitlements.plist'
+    required: true
+  apple-developer-id:
+    description: 'Apple Developer ID'
+    required: true
+  apple-cert:
+    description: 'Apple certificate (base64)'
+    required: true
+  apple-cert-password:
+    description: 'Apple certificate password'
+    required: true
+  apple-id:
+    description: 'Apple ID'
+    required: true
+  apple-team-id:
+    description: 'Apple Team ID'
+    required: true
+  apple-id-password:
+    description: 'Apple ID password'
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: Configure macOS signing
+      shell: bash
+      run: |
+        keychain="$RUNNER_TEMP/buildagent.keychain"
+        keychain_password="password1"
+
+        security create-keychain -p "$keychain_password" "$keychain"
+        security default-keychain -s "$keychain"
+        security unlock-keychain -p "$keychain_password" "$keychain"
+
+        base64 -D <<<"${{ inputs.apple-cert }}" > "$RUNNER_TEMP/cert.p12"
+        security import "$RUNNER_TEMP/cert.p12" -k "$keychain" -P "${{ inputs.apple-cert-password }}" -T /usr/bin/codesign
+        security set-key-partition-list -S "apple-tool:,apple:,codesign:" -s -k "$keychain_password" "$keychain"
+        rm "$RUNNER_TEMP/cert.p12"
+
+    - name: Sign application
+      shell: bash
+      run: |        
+        codesign --deep --timestamp --options=runtime \
+          --entitlements "${{ inputs.app-entitlement_plist }}" \
+          -s "${{ inputs.apple-developer-id }}" \
+          -v "${{ inputs.app-path }}"
+
+    - name: Notarize application
+      shell: bash
+      run: |
+        APP_DIR=$(dirname "${{ inputs.app-path }}")
+        APP_NAME=$(basename "${{ inputs.app-path }}")
+        ZIP_NAME="${APP_NAME%.app}_Notarize.zip"
+        
+        cd "$APP_DIR"
+        ditto -c -k --keepParent "$APP_NAME" "$ZIP_NAME"
+        
+        xcrun notarytool submit "$ZIP_NAME" \
+          --apple-id "${{ inputs.apple-id }}" \
+          --team-id "${{ inputs.apple-team-id }}" \
+          --password "${{ inputs.apple-id-password }}" \
+          --wait \
+          --timeout "10m"
+        
+        xcrun stapler staple "$APP_NAME"
+        xcrun stapler validate "$APP_NAME"
+        
+        rm "$ZIP_NAME"

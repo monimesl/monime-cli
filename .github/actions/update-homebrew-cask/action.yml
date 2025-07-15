@@ -1,0 +1,105 @@
+name: 'Update Homebrew Cask'
+description: 'Updates a Homebrew cask formula with new version information'
+
+inputs:
+  tap-repository:
+    description: 'Homebrew tap repository'
+    required: true
+  cask-name:
+    description: 'Name of the cask'
+    required: true
+  version:
+    description: 'New version'
+    required: true
+  sha256:
+    description: 'SHA256 checksum'
+    required: true
+  url:
+    description: 'Download URL'
+    required: true
+  access-token:
+    description: 'GitHub access token'
+    required: true
+  app-name:
+    description: 'Application display name'
+    required: true
+  app-description:
+    description: 'Application description'
+    required: true
+  app-homepage:
+    description: 'Application homepage URL'
+    required: false
+    default: 'https://monime.io'
+  app-bundle-name:
+    description: 'macOS app bundle name (e.g., "Monime 715.app")'
+    required: true
+  app-executable-name:
+    description: 'Executable name inside the app bundle'
+    required: true
+  enable-postflight:
+    description: 'Enable postflight script'
+    required: false
+    default: 'true'
+  postflight-script:
+    description: 'Custom postflight script (Ruby code)'
+    required: false
+    default: ''
+
+runs:
+  using: "composite"
+  steps:
+    - name: Checkout Homebrew tap
+      uses: actions/checkout@v4
+      with:
+        repository: ${{ inputs.tap-repository }}
+        path: homebrew-tap
+        token: ${{ inputs.access-token }}
+
+    - name: Update cask formula
+      shell: bash
+      working-directory: homebrew-tap
+      run: |
+        CASK_PATH="Casks/${{ inputs.cask-name }}.rb"
+        
+        POSTFLIGHT_SECTION=""
+        if [ "${{ inputs.enable-postflight }}" = "true" ]; then
+          if [ -n "${{ inputs.postflight-script }}" ]; then
+            POSTFLIGHT_SECTION="${{ inputs.postflight-script }}"
+          else
+            POSTFLIGHT_SECTION="postflight do
+            executable_path = \"#{appdir}/${{ inputs.app-bundle-name }}/Contents/MacOS/${{ inputs.app-executable-name }}\"
+            system \"chmod\", \"0755\", executable_path
+            ohai \"Setting executable permissions for #{executable_path}\"
+          end"
+          fi
+        fi
+        
+        cat << EOF > "$CASK_PATH"
+        cask "${{ inputs.cask-name }}" do
+          version "${{ inputs.version }}"
+          sha256 "${{ inputs.sha256 }}"
+        
+          url "${{ inputs.url }}"
+          name "${{ inputs.app-name }}"
+          desc "${{ inputs.app-description }}"
+          homepage "${{ inputs.app-homepage }}"
+        
+          app "${{ inputs.app-bundle-name }}"
+        
+          ${POSTFLIGHT_SECTION}
+        end
+        EOF
+        
+        echo "Updated Cask content:"
+        cat "$CASK_PATH"
+
+    - name: Commit and push changes
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+        repository: homebrew-tap
+        branch: main
+        file_pattern: "Casks/${{ inputs.cask-name }}.rb"
+        commit_author: "dev@monime.io"
+        commit_user_email: "dev@monime.io"
+        commit_user_name: "monime-deployment-bot"
+        commit_message: "${{ inputs.cask-name }}: Bump to version ${{ inputs.version }}"

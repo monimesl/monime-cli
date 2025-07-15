@@ -1,15 +1,19 @@
 "use client";
 import {useEffect} from "react";
 
-import {useSendReply} from "@/lib/apis.ts";
+import {useExchange} from "@/lib/apis.ts";
 import Spinner from "@/components/ui/spinner.tsx";
 import {useSession} from "@/model/session/provider.tsx";
+import {useConfig} from "@/model/config/provider.tsx";
+import {sanitizeMessage} from "@/lib/utils.ts";
 
 export default function LoadingScreen() {
+    const {config} = useConfig()
     const {session, setSession} = useSession();
-    const {reply, error} = useSendReply(session);
+    const {response, error} = useExchange(config, session);
     useEffect(() => {
         if (!error) return
+        console.error("USSD exception error:", error);
         setSession({
             screen: 'terminal',
             outputs: {
@@ -18,14 +22,15 @@ export default function LoadingScreen() {
         })
     }, [error, setSession])
     useEffect(() => {
-        if (!reply) return
+        if (!response) return
         setSession({
-            screen: reply.terminate ? 'terminal' : 'feedback',
+            id: response.sessionId,
+            screen: response.terminate ? 'terminal' : 'feedback',
             outputs: {
-                message: reply.responseMessage,
-            }
+                message: sanitizeMessage(response.responseMessage),
+            },
         })
-    }, [reply, setSession]);
+    }, [response, setSession]);
     return (
         <div className="flex items-center flex-col justify-center h-full bg-gray-700 p-0 w-full">
             <>
