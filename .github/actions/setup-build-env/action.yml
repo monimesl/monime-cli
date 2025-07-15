@@ -57,9 +57,9 @@ runs:
         path: |
           ~/go/bin/wails*
           ~/.local/share/wails
-        key: ${{ runner.os }}-wails-${{ inputs.wails-version }}-${{ hashFiles('**/wails.json', '**/go.mod') }}
+        key: ${{ inputs.platform }}-${{ runner.os }}-wails-${{ inputs.wails-version }}-${{ hashFiles('**/wails.json', '**/go.mod') }}
         restore-keys: |
-          ${{ runner.os }}-wails-${{ inputs.wails-version }}-
+          ${{ inputs.platform }}-${{ runner.os }}-wails-${{ inputs.wails-version }}-
           ${{ runner.os }}-wails-
 
     - name: Install Wails
