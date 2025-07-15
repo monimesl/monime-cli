@@ -17,7 +17,8 @@ on:
 permissions:
   contents: write
 jobs:
-  build-mac:
+  build-cli:
+    name: "Build CLI"
     runs-on: ubuntu-latest
     steps:
       - name: Code checkout

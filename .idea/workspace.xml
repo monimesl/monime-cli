@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="affc4f20-083f-4aef-957d-99e2add6a251" name="Changes" comment="Improved build workflow.">
-      <change beforePath="$PROJECT_DIR$/.github/actions/update-homebrew-cask/action.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/actions/update-homebrew-cask/action.yml" afterDir="false" />
+    <list default="true" id="affc4f20-083f-4aef-957d-99e2add6a251" name="Changes" comment="Improved Homebrew cask update workflow.">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/cli-release.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/cli-release.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -81,10 +81,12 @@
     <MESSAGE value="Updated" />
     <MESSAGE value="Updated build workflow and IDE settings.&#10;" />
     <MESSAGE value="Updated build workflow and IDE settings." />
-    <MESSAGE value="Improved" />
     <MESSAGE value="Improved build workflow and IDE settings.&#10;" />
     <MESSAGE value="Improved build workflow." />
-    <option name="LAST_COMMIT_MESSAGE" value="Improved build workflow." />
+    <MESSAGE value="Improved" />
+    <MESSAGE value="Improved Homebrew cask update workflow.&#10;" />
+    <MESSAGE value="Improved Homebrew cask update workflow." />
+    <option name="LAST_COMMIT_MESSAGE" value="Improved Homebrew cask update workflow." />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
