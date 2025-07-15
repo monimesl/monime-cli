@@ -1,0 +1,19 @@
+{
+  "source": [
+    "./apps/ussd-simulator/build/bin/Monime 715.app"
+  ],
+  "bundle_id": "app.monime_715",
+  "apple_id": {
+    "username": "alpha@monime.io",
+    "password": "kdtt-jpdl-rnxf-juoz",
+    "provider": "FW8WZC6YPH"
+  },
+  "sign": {
+    "application_identity": "Developer ID Application: Monime Limited"
+  },
+  "notarize": {
+    "path": "./apps/ussd-simulator/build/bin/Monime 715.app",
+    "bundle_id": "io.monime.monime715",
+    "staple": true
+  }
+}

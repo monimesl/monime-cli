@@ -5,9 +5,209 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="affc4f20-083f-4aef-957d-99e2add6a251" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/cmds/root.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmds/root.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/account/utils.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/account/utils.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/monimeapis/api_request.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/monimeapis/api_request.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/.idea/dictionaries/project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/.idea/ussd-simulator.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/Monime 715.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/backend/ussdgateway/gateway.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/build/appicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/build/darwin/Info.dev.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/build/darwin/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/build/darwin/entitlements.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/.eslintrc.cjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/components.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/package.json.md5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/postcss.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/App.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/assets/fonts/OFL.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/assets/fonts/nunito-v16-latin-regular.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/assets/images/logo-universal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/components/Frame.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/components/ScreenContainer.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/components/ui/badge.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/components/ui/button.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/components/ui/card.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/components/ui/checkbox.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/components/ui/combobox.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/components/ui/command.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/components/ui/dialog.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/components/ui/input.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/components/ui/popover.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/components/ui/radio-group.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/components/ui/select.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/components/ui/spinner.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/components/ui/switch.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/lib/apis.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/lib/utils.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/model/config/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/model/config/provider.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/model/session/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/model/session/provider.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/screens/DialPadScreen.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/screens/FeedbackScreen.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/screens/LoadingScreen.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/screens/ReplyScreen.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/screens/TerminalScreen.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/vite-env.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/tailwind.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/tsconfig.node.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/vite.config.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/wailsjs/go/models.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/wailsjs/go/ussdgateway/Gateway.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/wailsjs/go/ussdgateway/Gateway.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/wailsjs/runtime/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/wailsjs/runtime/runtime.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/wailsjs/runtime/runtime.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/go.mod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/go.sum" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/main.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/wails.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/app.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/build/appicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/build/bin/Monime Webhook.app/Contents/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/build/bin/Monime Webhook.app/Contents/MacOS/webhook" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/build/bin/Monime Webhook.app/Contents/Resources/iconfile.icns" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/build/bin/webhook.app/Contents/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/build/bin/webhook.app/Contents/MacOS/webhook" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/build/bin/webhook.app/Contents/Resources/iconfile.icns" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/build/darwin/Info.dev.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/build/darwin/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/.eslintrc.cjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/components.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/package.json.md5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/postcss.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/src/App.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/src/assets/fonts/OFL.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/src/assets/fonts/nunito-v16-latin-regular.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/src/assets/images/appicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/src/components/EventsPopover.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/src/components/RequestDetails.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/src/components/RequestList.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/src/components/SimulateEventPopover.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/src/components/TunnelPopover.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/src/components/WebhookHeader.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/src/components/ui/badge.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/src/components/ui/button.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/src/components/ui/card.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/src/components/ui/checkbox.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/src/components/ui/combobox.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/src/components/ui/command.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/src/components/ui/dialog.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/src/components/ui/input.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/src/components/ui/popover.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/src/components/ui/radio-group.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/src/components/ui/select.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/src/components/ui/switch.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/src/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/src/lib/utils.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/src/main.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/src/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/src/types/webhook.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/src/utils/webhook.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/src/vite-env.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/tailwind.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/tsconfig.node.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/vite.config.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/wailsjs/go/main/App.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/wailsjs/go/main/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/wailsjs/runtime/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/wailsjs/runtime/runtime.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/wailsjs/runtime/runtime.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/go.mod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/go.sum" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/main.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/wails.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/monime/main.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmds/account/list.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmds/account/login.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmds/account/logout.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmds/account/zroot.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmds/root.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmds/simulate/root.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmds/simulate/ussd.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmds/simulate/webhook.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmds/space/activate.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmds/space/list.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmds/space/zroot.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/account/login/flow.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/account/login/token.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/account/login/token_decrypter.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/account/login/token_verifier.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/account/model.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/account/repository.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/account/service.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/account/utils.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/space/model.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/space/repository.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/space/service.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/browser/browser.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/browser/browser_darwin.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/browser/browser_freebsd.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/browser/browser_linux.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/browser/browser_netbsd.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/browser/browser_openbsd.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/browser/browser_windows.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/cmds/account/list.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/cmds/account/login.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/cmds/account/logout.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/cmds/account/zroot.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/cmds/root.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/cmds/simulate/root.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/cmds/simulate/ussd.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/cmds/simulate/webhook.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/cmds/space/activate.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/cmds/space/list.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/cmds/space/zroot.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/errors/errors.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/monimeapis/api_request.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/monimeapis/credentials.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/monimeapis/web_client.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/resource/account/login/flow.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/resource/account/login/token.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/resource/account/login/token_decrypter.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/resource/account/login/token_verifier.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/resource/account/model.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/resource/account/repository.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/resource/account/service.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/resource/account/utils.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/resource/space/model.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/resource/space/repository.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/resource/space/service.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/store/instance.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/store/store.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/store/store_impl.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/text/formatting.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/text/print.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/utils/.golangci.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/utils/go.mod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/utils/go.sum" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/utils/monimeapis/api_request.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/utils/monimeapis/credentials.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/utils/monimeapis/errors.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/utils/monimeapis/web_client.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/utils/text/formatting.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/utils/text/print.go" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,40 +218,40 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "alphashaw"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;alphashaw&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "git@github.com:monimesl/monime-cli.git",
-    "accountId": "2d1d2d0b-64c6-4259-afda-2753c09b8150"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:monimesl/monime-cli.git&quot;,
+    &quot;accountId&quot;: &quot;2d1d2d0b-64c6-4259-afda-2753c09b8150&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2zuEDSC7WZOI1RiCYnB1Sks5HJa" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.go.formatter.settings.were.checked": "true",
-    "RunOnceActivity.go.migrated.go.modules.settings": "true",
-    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
-    "git-widget-placeholder": "main",
-    "go.import.settings.migrated": "true",
-    "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "/Users/alphashaw/projects/Projects/sources/monimesl/apps/monime-cli"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/alphashaw/projects/Projects/sources/monimesl/apps/monime-cli&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
