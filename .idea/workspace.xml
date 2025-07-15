@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="affc4f20-083f-4aef-957d-99e2add6a251" name="Changes" comment="" />
+    <list default="true" id="affc4f20-083f-4aef-957d-99e2add6a251" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.github/actions/setup-build-env/action.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/actions/setup-build-env/action.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/ussd-simulator_release.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ussd-simulator_release.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,7 +49,8 @@
     "git-widget-placeholder": "main",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "/Users/alphashaw/projects/Projects/sources/monimesl/apps/monime-cli/apps/ussd-simulator/frontend"
+    "last_opened_file_path": "/Users/alphashaw/projects/Projects/sources/monimesl/apps/monime-cli/apps/ussd-simulator/frontend",
+    "settings.editor.selected.configurable": "com.github.blarc.ai.commits.intellij.plugin.settings.AppSettingsConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -71,6 +76,10 @@
       <updated>1652061092566</updated>
     </task>
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="{&#10;    &quot;error&quot;: {&#10;        &quot;message&quot;: &quot;You didn't provide an API key. You need to provide your API key in an Authorization header using Bearer auth (i.e. Authorization: Bearer YOUR_KEY), or as the password field (with blank username) if you're accessing the API from your browser and are prompted for a username and password. You can obtain an API key from https://platform.openai.com/account/api-keys.&quot;,&#10;        &quot;type&quot;: &quot;invalid_request_error&quot;,&#10;        &quot;param&quot;: null,&#10;        &quot;code&quot;: null&#10;    }&#10;}" />
+    <option name="LAST_COMMIT_MESSAGE" value="{&#10;    &quot;error&quot;: {&#10;        &quot;message&quot;: &quot;You didn't provide an API key. You need to provide your API key in an Authorization header using Bearer auth (i.e. Authorization: Bearer YOUR_KEY), or as the password field (with blank username) if you're accessing the API from your browser and are prompted for a username and password. You can obtain an API key from https://platform.openai.com/account/api-keys.&quot;,&#10;        &quot;type&quot;: &quot;invalid_request_error&quot;,&#10;        &quot;param&quot;: null,&#10;        &quot;code&quot;: null&#10;    }&#10;}" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>

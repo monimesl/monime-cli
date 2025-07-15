@@ -48,17 +48,11 @@ jobs:
             platform: linux
             runner: ubuntu-latest
             ext: ""
-          - os: linux
-            arch: arm64
-            platform: linux
-            runner: ubuntu-24.04-arm
-            ext: ""
-          # - os: windows
-          #   arch: amd64
-          #   platform: windows
-          #   runner: windows-latest
-          #   ext: ".exe"
-
+          - os: windows
+            arch: amd64
+            platform: windows
+            runner: windows-latest
+            ext: ".exe"
     outputs:
       version: ${{ steps.build-vars.outputs.version }}
       commit_hash: ${{ steps.build-vars.outputs.commit_hash }}
@@ -93,6 +87,7 @@ jobs:
           wails-version: ${{ env.WAILS_VERSION }}
           access-token: ${{ secrets.ACCESS_TOKEN_GITHUB }}
           platform: ${{ matrix.os }}
+          arch: ${{ matrix.arch }}
 
       - name: Install frontend dependencies
         shell: bash

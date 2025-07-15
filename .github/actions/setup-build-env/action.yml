@@ -17,6 +17,9 @@ inputs:
   platform:
     description: 'Operating system platform'
     required: true
+  arch:
+    description: 'Operating system architecture'
+    required: true
 
 runs:
   using: "composite"
@@ -57,9 +60,9 @@ runs:
         path: |
           ~/go/bin/wails*
           ~/.local/share/wails
-        key: ${{ inputs.platform }}-${{ runner.os }}-wails-${{ inputs.wails-version }}-${{ hashFiles('**/wails.json', '**/go.mod') }}
+        key: ${{ runner.os }}-${{ inputs.arch }}-wails-${{ inputs.wails-version }}-${{ hashFiles('**/wails.json', '**/go.mod') }}
         restore-keys: |
-          ${{ inputs.platform }}-${{ runner.os }}-wails-${{ inputs.wails-version }}-
+          ${{ runner.os }}-${{ inputs.arch }}-wails-${{ inputs.wails-version }}-
           ${{ runner.os }}-wails-
 
     - name: Install Wails
