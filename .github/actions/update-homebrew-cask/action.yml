@@ -99,7 +99,7 @@ runs:
         repository: homebrew-tap
         branch: main
         file_pattern: "Casks/${{ inputs.cask-name }}.rb"
-        commit_author: "dev@monime.io"
+        commit_author: "cli dev@monime.io"
         commit_user_email: "dev@monime.io"
         commit_user_name: "monime-deployment-bot"
         commit_message: "${{ inputs.cask-name }}: Bump to version ${{ inputs.version }}"
