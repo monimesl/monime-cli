@@ -83,4 +83,21 @@ runs:
           libwebkit2gtk-4.1-dev \
           pkg-config \
           build-essential
-        sudo ln -sf /usr/lib/x86_64-linux-gnu/pkgconfig/webkit2gtk-4.1.pc /usr/lib/x86_64-linux-gnu/pkgconfig/webkit2gtk-4.0.pc
+        
+        # Dynamically determine the correct multiarch triplet (e.g., x86_64-linux-gnu or aarch64-linux-gnu)
+        ARCH_TRIPLET=$(dpkg-architecture -q DEB_BUILD_MULTIARCH)
+        echo "Detected architecture triplet for symlink: $ARCH_TRIPLET"
+        
+        # Create the symbolic link for webkit2gtk-4.0 pointing to 4.1
+        # This is often needed for Wails to correctly find the library
+        # Add a check to ensure the source file exists before attempting to link
+        SOURCE_PC_FILE="/usr/lib/$ARCH_TRIPLET/pkgconfig/webkit2gtk-4.1.pc"
+        TARGET_PC_FILE="/usr/lib/$ARCH_TRIPLET/pkgconfig/webkit2gtk-4.0.pc"
+        
+        if [ -f "$SOURCE_PC_FILE" ]; then
+            echo "Creating symlink: $TARGET_PC_FILE -> $SOURCE_PC_FILE"
+            sudo ln -sf "$SOURCE_PC_FILE" "$TARGET_PC_FILE"
+        else
+            echo "Warning: Source .pc file not found at $SOURCE_PC_FILE. Skipping symlink creation."
+            echo "This might indicate a missing dependency or a different package naming convention."
+        fi
