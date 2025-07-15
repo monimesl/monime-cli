@@ -70,7 +70,6 @@ archives:
       - none*
 
 release:
-  draft: true
   mode: 'keep-existing'
   replace_existing_artifacts: true
 
