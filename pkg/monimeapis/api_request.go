@@ -8,7 +8,7 @@ import (
 	"github.com/monime-lab/gwater/httputil"
 	"github.com/monime-lab/gwater/mimetype"
 	webclient "github.com/monime-lab/web-client-go"
-	errors2 "github.com/monimesl/monime-cli/pkg/errors"
+	"github.com/monimesl/monime-cli/cli-utils/monimeapis"
 	"net/http"
 	"reflect"
 )
@@ -93,7 +93,7 @@ func ApiRequest[Req, T any](ctx context.Context, client webclient.Client, method
 	}
 	switch apiErr.StatusCode {
 	case http.StatusUnauthorized:
-		return result, errors2.ErrAccountNotAuthenticated
+		return result, monimeapis.ErrNotAuthenticated
 	case http.StatusNotFound:
 		return result, syserr.ResourceMissing(apiErr.Error())
 	case http.StatusConflict:

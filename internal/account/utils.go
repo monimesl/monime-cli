@@ -2,7 +2,7 @@ package account
 
 import (
 	"context"
-	"github.com/monimesl/monime-cli/pkg/errors"
+	monimeapis2 "github.com/monimesl/monime-cli/cli-utils/monimeapis"
 	"github.com/monimesl/monime-cli/pkg/monimeapis"
 )
 
@@ -21,7 +21,7 @@ func getActiveToken(ctx context.Context) (string, error) {
 		return "", err
 	}
 	if !ok {
-		return "", errors.ErrAccountNotAuthenticated
+		return "", monimeapis2.ErrNotAuthenticated
 	}
 	return acc.Token, nil
 }

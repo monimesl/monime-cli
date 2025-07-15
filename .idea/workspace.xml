@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="affc4f20-083f-4aef-957d-99e2add6a251" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/actions/setup-build-env/action.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/actions/setup-build-env/action.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmds/root.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmds/root.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/account/utils.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/account/utils.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/monimeapis/api_request.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/monimeapis/api_request.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

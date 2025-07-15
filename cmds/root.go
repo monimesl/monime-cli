@@ -7,6 +7,7 @@ import (
 	"github.com/monimesl/monime-cli/cmds/simulate"
 	"github.com/monimesl/monime-cli/cmds/space"
 	errors2 "github.com/monimesl/monime-cli/pkg/errors"
+	"github.com/monimesl/monime-cli/pkg/utils/monimeapis"
 	"github.com/monimesl/monime-cli/pkg/utils/text"
 	"github.com/spf13/cobra"
 	"os"
@@ -55,7 +56,7 @@ func checkError(err error) {
 		msg = "\nCommand timed out"
 	case errors.Is(err, errors2.ErrCliSilent):
 		os.Exit(1)
-	case errors.Is(err, errors2.ErrAccountNotAuthenticated):
+	case errors.Is(err, monimeapis.ErrNotAuthenticated):
 		errors2.PrintLoginHint()
 		os.Exit(1)
 	}
