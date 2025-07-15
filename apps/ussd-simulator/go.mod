@@ -5,8 +5,8 @@ go 1.23.1
 require (
 	github.com/monime-lab/gok v0.0.0-20250701051803-012a96297e2e
 	github.com/monime-lab/gwater v0.0.0-20250625051747-596586865b91
-	github.com/monimesl/monime-cli/cli-utils v0.0.0-20250713024909-8eafb4bf65c7
-	github.com/wailsapp/wails/v2 v2.10.1
+	github.com/monimesl/monime-cli/pkg/utils v0.0.0-20250715181848-e79624e796c4
+	github.com/wailsapp/wails/v2 v2.10.2
 )
 
 require (
@@ -17,6 +17,7 @@ require (
 	github.com/go-ole/go-ole v1.3.0 // indirect
 	github.com/godbus/dbus/v5 v5.1.0 // indirect
 	github.com/google/uuid v1.6.0 // indirect
+	github.com/gorilla/websocket v1.5.3 // indirect
 	github.com/iancoleman/strcase v0.3.0 // indirect
 	github.com/jchv/go-winloader v0.0.0-20210711035445-715c2860da7e // indirect
 	github.com/karlseguin/ccache/v3 v3.0.5 // indirect

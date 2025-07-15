@@ -3,7 +3,7 @@ package ussdgateway
 import (
 	"context"
 	"github.com/monime-lab/gok/syserr"
-	"github.com/monimesl/monime-cli/cli-utils/monimeapis"
+	"github.com/monimesl/monime-cli/pkg/utils/monimeapis"
 	"net/http"
 	"time"
 )

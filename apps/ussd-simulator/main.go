@@ -5,7 +5,7 @@ import (
 	"embed"
 	"fmt"
 	"github.com/monime-lab/gwater"
-	"github.com/monimesl/monime-cli/cli-utils/monimeapis"
+	"github.com/monimesl/monime-cli/pkg/utils/monimeapis"
 	"github.com/wailsapp/wails/v2/pkg/options/linux"
 	"github.com/wailsapp/wails/v2/pkg/options/windows"
 	"log"
