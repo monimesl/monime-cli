@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="affc4f20-083f-4aef-957d-99e2add6a251" name="Changes" comment="Improved Homebrew cask update workflow.">
-      <change beforePath="$PROJECT_DIR$/.goreleaser/cli.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.goreleaser/cli.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/ussd-simulator_release.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ussd-simulator_release.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

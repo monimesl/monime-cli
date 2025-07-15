@@ -201,7 +201,7 @@ jobs:
           
               case "$dir" in
                 *windows*)
-                  zip -r "../../release-assets/${dir}.zip" . -x "*.txt"
+                  tar -czf "../../release-assets/${dir}.tar.gz" .
                   [ -f "BUILD_INFO.txt" ] && cp "BUILD_INFO.txt" "../../release-assets/${dir}-BUILD_INFO.txt"
                   ;;
                 *darwin*)
