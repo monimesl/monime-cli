@@ -2,7 +2,7 @@ package space
 
 import (
 	"context"
-	"github.com/monimesl/monime-cli/pkg/resource/space"
+	"github.com/monimesl/monime-cli/internal/resource/space"
 	"github.com/spf13/cobra"
 )
 

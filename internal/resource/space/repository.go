@@ -5,7 +5,7 @@ import (
 	"errors"
 	"fmt"
 	"github.com/monimesl/monime-cli/cli-utils/monimeapis"
-	"github.com/monimesl/monime-cli/pkg/store"
+	"github.com/monimesl/monime-cli/internal/store"
 	"net/http"
 )
 

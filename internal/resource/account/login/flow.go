@@ -7,7 +7,7 @@ import (
 	"errors"
 	"fmt"
 	"github.com/monime-lab/gwater"
-	"github.com/monimesl/monime-cli/pkg/browser"
+	"github.com/monimesl/monime-cli/internal/browser"
 	"golang.org/x/crypto/nacl/box"
 	"log"
 	"net/http"

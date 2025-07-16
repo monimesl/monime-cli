@@ -3,7 +3,7 @@ package darwin
 import (
 	"context"
 	"fmt"
-	"github.com/monimesl/monime-cli/pkg/platforms/allplatform"
+	"github.com/monimesl/monime-cli/internal/platforms/allplatform"
 	"os"
 	"os/exec"
 	"path/filepath"

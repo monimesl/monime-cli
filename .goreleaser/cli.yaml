@@ -1,6 +1,3 @@
-# GoReleaser configuration for cross-platform CLI builds
-# https://goreleaser.com/
-
 version: 2
 
 project_name: monime
@@ -30,7 +27,7 @@ builds:
     flags:
       - -trimpath
     ldflags:
-      - -s -w
+      - -s -w -X github.com/monimesl/monime-cli/pkg/version.Version=={{.Version}}
       - -X main.version={{.Version}}
       - -X main.commit={{.Commit}}
       - -X main.date={{.Date}}
@@ -48,7 +45,7 @@ builds:
     flags:
       - -trimpath
     ldflags:
-      - -s -w
+      - -s -w -X github.com/monimesl/monime-cli/pkg/version.Version=={{.Version}}
       - -X main.version={{.Version}}
       - -X main.commit={{.Commit}}
       - -X main.date={{.Date}}
@@ -66,7 +63,7 @@ builds:
     flags:
       - -trimpath
     ldflags:
-      - -s -w
+      - -s -w -X github.com/monimesl/monime-cli/pkg/version.Version=={{.Version}}
       - -X main.version={{.Version}}
       - -X main.commit={{.Commit}}
       - -X main.date={{.Date}}

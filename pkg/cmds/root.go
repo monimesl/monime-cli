@@ -4,11 +4,12 @@ import (
 	"context"
 	"errors"
 	"github.com/monimesl/monime-cli/cli-utils/monimeapis"
+	errors2 "github.com/monimesl/monime-cli/internal/errors"
+	"github.com/monimesl/monime-cli/internal/text"
 	"github.com/monimesl/monime-cli/pkg/cmds/account"
 	"github.com/monimesl/monime-cli/pkg/cmds/space"
 	"github.com/monimesl/monime-cli/pkg/cmds/start"
-	errors2 "github.com/monimesl/monime-cli/pkg/errors"
-	"github.com/monimesl/monime-cli/pkg/text"
+	"github.com/monimesl/monime-cli/pkg/version"
 	"github.com/spf13/cobra"
 	"os"
 	"os/signal"
@@ -17,13 +18,13 @@ import (
 )
 
 var rootCmd = &cobra.Command{
-	Use:           "monime",
-	Short:         "Monime command line tool for development and utility operations",
-	Version:       "0.0.1",
-	SilenceErrors: true,
+	Use:     "monime",
+	Short:   "Monime command line tool for development and utility operations",
+	Version: version.Version,
 	CompletionOptions: cobra.CompletionOptions{
 		DisableDefaultCmd: true,
 	},
+	SilenceErrors: true,
 }
 
 func init() {
@@ -35,6 +36,8 @@ func init() {
 	rootCmd.SetHelpCommand(&cobra.Command{
 		Hidden: true,
 	})
+	rootCmd.Flags().BoolP("version", "v", false, "Check the Monime CLI version")
+	rootCmd.AddCommand(createVersionCommand().cmd)
 }
 
 func ExecuteRootCmd() {

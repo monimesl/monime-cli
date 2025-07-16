@@ -3,7 +3,7 @@ package space
 import (
 	"context"
 	"fmt"
-	"github.com/monimesl/monime-cli/pkg/text"
+	"github.com/monimesl/monime-cli/internal/text"
 	"github.com/olekukonko/tablewriter"
 	"os"
 )

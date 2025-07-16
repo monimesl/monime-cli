@@ -2,8 +2,8 @@ package ussd
 
 import (
 	"context"
-	"github.com/monimesl/monime-cli/pkg/platforms/darwin"
-	"github.com/monimesl/monime-cli/pkg/text"
+	"github.com/monimesl/monime-cli/internal/platforms/darwin"
+	"github.com/monimesl/monime-cli/internal/text"
 	"os"
 )
 

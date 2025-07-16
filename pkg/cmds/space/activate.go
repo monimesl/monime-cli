@@ -3,9 +3,9 @@ package space
 import (
 	"context"
 	"fmt"
-	errors2 "github.com/monimesl/monime-cli/pkg/errors"
-	"github.com/monimesl/monime-cli/pkg/resource/space"
-	"github.com/monimesl/monime-cli/pkg/text"
+	errors2 "github.com/monimesl/monime-cli/internal/errors"
+	"github.com/monimesl/monime-cli/internal/resource/space"
+	"github.com/monimesl/monime-cli/internal/text"
 	"github.com/spf13/cobra"
 )
 

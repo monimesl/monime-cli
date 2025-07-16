@@ -2,7 +2,7 @@ package account
 
 import (
 	"context"
-	"github.com/monimesl/monime-cli/pkg/resource/account"
+	"github.com/monimesl/monime-cli/internal/resource/account"
 	"github.com/spf13/cobra"
 )
 

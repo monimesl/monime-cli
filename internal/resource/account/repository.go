@@ -4,7 +4,7 @@ import (
 	"context"
 	"errors"
 	"fmt"
-	"github.com/monimesl/monime-cli/pkg/store"
+	"github.com/monimesl/monime-cli/internal/store"
 )
 
 type Repository interface {
