@@ -4,49 +4,18 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="affc4f20-083f-4aef-957d-99e2add6a251" name="Changes" comment="Removed redundant `ohai` logging and unnecessary quiet flag from Homebrew cask installation commands.">
-      <change afterPath="$PROJECT_DIR$/pkg/cmds/version.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/cobras/validators.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/version/version.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/ussd-simulator_release.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ussd-simulator_release.yaml" afterDir="false" />
+    <list default="true" id="affc4f20-083f-4aef-957d-99e2add6a251" name="Changes" comment="Refactored project structure: moved packages to `internal`, added versioning support, improved CLI commands, and updated build configuration.">
+      <change afterPath="$PROJECT_DIR$/pkg/cmds/apps/ussdsimulator/cmd.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/cmds/apps/webhookinspector/cmd.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.goreleaser/cli.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.goreleaser/cli.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/wails.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ussd-simulator/wails.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/browser/browser.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/browser/browser.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/browser/browser_darwin.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/browser/browser_darwin.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/browser/browser_linux.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/browser/browser_linux.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/browser/browser_windows.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/browser/browser_windows.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/cmds/account/list.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/cmds/account/list.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/cmds/account/login.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/cmds/account/login.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/cmds/account/logout.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/cmds/account/logout.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pkg/cmds/root.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/cmds/root.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/cmds/space/activate.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/cmds/space/activate.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/cmds/space/list.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/cmds/space/list.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/cmds/start/apps/ussd/ussd.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/cmds/start/apps/ussd/simulator.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/cmds/start/apps/ussd/ussd_darwin.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/cmds/start/apps/ussd/utils_darwin.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/cmds/start/apps/ussd/ussd_linux.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/cmds/start/apps/ussd/utils_linux.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/cmds/start/apps/ussd/ussd_windows.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/cmds/start/apps/ussd/utils_windows.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/cmds/start/apps/webhook/webhook.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/cmds/start/apps/webhook/inspector.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/errors/errors.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/errors/errors.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/platforms/allplatform/utils.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/platforms/allplatform/utils.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/platforms/darwin/utils_darwin.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/platforms/darwin/utils_darwin.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/platforms/linux/utils_linux.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/platforms/linux/utils_linux.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/resource/account/login/flow.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/resource/account/login/flow.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/resource/account/login/token.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/resource/account/login/token.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/resource/account/login/token_decrypter.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/resource/account/login/token_decrypter.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/resource/account/login/token_verifier.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/resource/account/login/token_verifier.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/resource/account/model.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/resource/account/model.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/resource/account/repository.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/resource/account/repository.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/resource/account/service.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/resource/account/service.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/resource/account/utils.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/resource/account/utils.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/resource/space/model.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/resource/space/model.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/resource/space/repository.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/resource/space/repository.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/resource/space/service.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/resource/space/service.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/store/instance.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/store/instance.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/store/store.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/store/store.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/store/store_impl.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/store/store_impl.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/text/formatting.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/text/formatting.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/text/print.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/text/print.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/cmds/start/apps/ussd/simulator.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/cmds/apps/ussdsimulator/start.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/cmds/start/apps/ussd/utils_darwin.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/cmds/apps/ussdsimulator/utils_darwin.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/cmds/start/apps/ussd/utils_linux.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/cmds/apps/ussdsimulator/utils_linux.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/cmds/start/apps/ussd/utils_windows.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/cmds/apps/ussdsimulator/utils_windows.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/cmds/start/apps/webhook/inspector.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/cmds/apps/webhookinspector/start.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/cmds/start/root.go" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,11 +80,11 @@
       <recent name="$PROJECT_DIR$/apps" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/pkg/cmds" />
       <recent name="$PROJECT_DIR$/internal" />
       <recent name="$PROJECT_DIR$/pkg" />
       <recent name="$PROJECT_DIR$/docs" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/pkg/platforms/darwin" />
     </key>
   </component>
   <component name="RunManager">
@@ -156,7 +125,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="Improved Homebrew cask update workflow." />
     <MESSAGE value="Updated Homebrew cask and README.&#10;" />
     <MESSAGE value="apply large-scale changes" />
     <MESSAGE value="Updated Homebrew cask and README." />
@@ -181,7 +149,8 @@
     <MESSAGE value="Added placeholder implementation for `launchApp` on Windows in the USSD package." />
     <MESSAGE value="Removed redundant log message and unnecessary flag from Homebrew cask installation process." />
     <MESSAGE value="Removed redundant `ohai` logging and unnecessary quiet flag from Homebrew cask installation commands." />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed redundant `ohai` logging and unnecessary quiet flag from Homebrew cask installation commands." />
+    <MESSAGE value="Refactored project structure: moved packages to `internal`, added versioning support, improved CLI commands, and updated build configuration." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored project structure: moved packages to `internal`, added versioning support, improved CLI commands, and updated build configuration." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

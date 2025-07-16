@@ -7,8 +7,9 @@ import (
 	errors2 "github.com/monimesl/monime-cli/internal/errors"
 	"github.com/monimesl/monime-cli/internal/text"
 	"github.com/monimesl/monime-cli/pkg/cmds/account"
+	"github.com/monimesl/monime-cli/pkg/cmds/apps/ussdsimulator"
+	"github.com/monimesl/monime-cli/pkg/cmds/apps/webhookinspector"
 	"github.com/monimesl/monime-cli/pkg/cmds/space"
-	"github.com/monimesl/monime-cli/pkg/cmds/start"
 	"github.com/monimesl/monime-cli/pkg/version"
 	"github.com/spf13/cobra"
 	"os"
@@ -20,7 +21,7 @@ import (
 var rootCmd = &cobra.Command{
 	Use:     "monime",
 	Short:   "Monime command line tool for development and utility operations",
-	Version: version.Version,
+	Version: version.String,
 	CompletionOptions: cobra.CompletionOptions{
 		DisableDefaultCmd: true,
 	},
@@ -31,7 +32,8 @@ func init() {
 	rootCmd.AddCommand(
 		space.Command,
 		account.Command,
-		start.Command,
+		ussdsimulator.Command,
+		webhookinspector.Command,
 	)
 	rootCmd.SetHelpCommand(&cobra.Command{
 		Hidden: true,

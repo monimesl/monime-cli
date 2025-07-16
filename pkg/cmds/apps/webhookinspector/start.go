@@ -1,11 +1,11 @@
-package webhook
+package webhookinspector
 
 import (
 	"github.com/spf13/cobra"
 	"os/exec"
 )
 
-var Inspector = &cobra.Command{
+var start = &cobra.Command{
 	Use:   "webhook-inspector",
 	Short: "Start the Webhook Inspector",
 	RunE: func(cmd *cobra.Command, args []string) error {

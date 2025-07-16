@@ -1,4 +1,4 @@
-package ussd
+package ussdsimulator
 
 import (
 	"github.com/monimesl/monime-cli/internal/resource/account"
@@ -9,9 +9,9 @@ import (
 	"os/signal"
 )
 
-var Simulator = &cobra.Command{
+var start = &cobra.Command{
+	Use:   "start",
 	Args:  cobras.NoArgs,
-	Use:   "ussd-simulator",
 	Short: "Start the USSD Simulator",
 	RunE: func(cmd *cobra.Command, args []string) error {
 		if err := account.LoadActiveToken(cmd.Context()); err != nil {
