@@ -45,7 +45,24 @@ builds:
       - linux
     goarch:
       - amd64
-      - arm64
+    flags:
+      - -trimpath
+    ldflags:
+      - -s -w
+      - -X main.version={{.Version}}
+      - -X main.commit={{.Commit}}
+      - -X main.date={{.Date}}
+      - -X main.builtBy=goreleaser
+
+  - id: windows-build
+    binary: monime
+    main: ./cmd/monime/main.go
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - windows
+    goarch:
+      - amd64
     flags:
       - -trimpath
     ldflags:
@@ -65,6 +82,12 @@ archives:
   - id: linux-archive
     builds: [linux-build]
     name_template: "monime_cli_{{ .Version }}_linux_{{ .Arch }}"
+    wrap_in_directory: true
+    files:
+      - none*
+  - id: windows-archive
+    builds: [ windows-build ]
+    name_template: "monime_cli_{{ .Version }}_windows_{{ .Arch }}"
     wrap_in_directory: true
     files:
       - none*
