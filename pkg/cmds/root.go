@@ -5,8 +5,8 @@ import (
 	"errors"
 	"github.com/monimesl/monime-cli/cli-utils/monimeapis"
 	"github.com/monimesl/monime-cli/pkg/cmds/account"
-	"github.com/monimesl/monime-cli/pkg/cmds/simulate"
 	"github.com/monimesl/monime-cli/pkg/cmds/space"
+	"github.com/monimesl/monime-cli/pkg/cmds/start"
 	errors2 "github.com/monimesl/monime-cli/pkg/errors"
 	"github.com/monimesl/monime-cli/pkg/text"
 	"github.com/spf13/cobra"
@@ -30,7 +30,7 @@ func init() {
 	rootCmd.AddCommand(
 		space.Command,
 		account.Command,
-		simulate.Command,
+		start.Command,
 	)
 	rootCmd.SetHelpCommand(&cobra.Command{
 		Hidden: true,

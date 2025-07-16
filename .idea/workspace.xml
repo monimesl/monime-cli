@@ -4,17 +4,29 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="affc4f20-083f-4aef-957d-99e2add6a251" name="Changes" comment="Updated Homebrew cask and README.">
+    <list default="true" id="affc4f20-083f-4aef-957d-99e2add6a251" name="Changes" comment="Updated dependencies.">
+      <change afterPath="$PROJECT_DIR$/pkg/cmds/start/apps/ussd/ussd_darwin.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/platforms/allplatform/utils.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/platforms/darwin/utils_darwin.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/backend/ussdgateway/gateway.go" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ussd-simulator/backend/ussdgateway/gateway.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ussd-simulator/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ussd-simulator/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ussd-simulator/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/sample.gif" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/cmds/root.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/cmds/root.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/cmds/simulate/root.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/cmds/start/root.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/cmds/simulate/ussd.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/cmds/start/apps/ussd/ussd.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/cmds/simulate/webhook.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/cmds/start/apps/webhook/webhook.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/resource/account/utils.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/resource/account/utils.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
   </component>
   <component name="GOROOT" url="file:///usr/local/go" />
   <component name="Git.Settings">
@@ -42,13 +54,14 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultGoTemplateProperty": "Go File",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.go.formatter.settings.were.checked": "true",
     "RunOnceActivity.go.migrated.go.modules.settings": "true",
     "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "develop",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
     "last_opened_file_path": "/Users/alphashaw/projects/Projects/sources/monimesl/apps/monime-cli/apps/ussd-simulator/frontend",
@@ -60,6 +73,12 @@
       <recent name="$PROJECT_DIR$/apps/ussd-simulator/frontend" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/apps" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/pkg/platforms/darwin" />
+      <recent name="$PROJECT_DIR$/pkg/cmds/start/apps/webhook" />
+      <recent name="$PROJECT_DIR$/pkg/cmds/start/apps/ussd" />
+      <recent name="$PROJECT_DIR$/pkg/cmds/start/apps" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -88,11 +107,15 @@
     <MESSAGE value="Improved" />
     <MESSAGE value="Improved Homebrew cask update workflow.&#10;" />
     <MESSAGE value="Improved Homebrew cask update workflow." />
-    <MESSAGE value="Updated" />
     <MESSAGE value="Updated Homebrew cask and README.&#10;" />
     <MESSAGE value="apply large-scale changes" />
     <MESSAGE value="Updated Homebrew cask and README." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated Homebrew cask and README." />
+    <MESSAGE value="Updated Homebrew cask and README file.&#10;" />
+    <MESSAGE value="Updated Homebrew cask, README, and dependencies.&#10;" />
+    <MESSAGE value="Updated" />
+    <MESSAGE value="Updated dependencies, Homebrew cask, and README.&#10;" />
+    <MESSAGE value="Updated dependencies." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated dependencies." />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>

@@ -5,10 +5,26 @@ import (
 	"fmt"
 	"github.com/monimesl/monime-cli/cli-utils/monimeapis"
 	"net/http"
+	"os"
+)
+
+const (
+	cliTokenEnvVar = "MONIME_CLI_TOKEN"
 )
 
 func init() {
 	monimeapis.GetActiveAccountTokenFunc = getActiveToken
+}
+
+func LoadActiveToken(ctx context.Context) error {
+	token, err := CheckActiveToken(ctx)
+	if err != nil {
+		return err
+	}
+	if err = os.Setenv(cliTokenEnvVar, token); err != nil {
+		return err
+	}
+	return nil
 }
 
 func CheckActiveToken(ctx context.Context) (string, error) {
