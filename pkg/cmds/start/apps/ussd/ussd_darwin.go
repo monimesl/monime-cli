@@ -14,8 +14,8 @@ const (
 )
 
 func launchApp(ctx context.Context) (*os.Process, error) {
-	process, err, appExists := launchBrewCaskApp(ctx)
-	if appExists {
+	process, err, found := launchBrewCaskApp(ctx)
+	if found {
 		return process, err
 	}
 	formattedAppName := text.Format(appName, text.FormatOptions{
@@ -38,5 +38,6 @@ func launchBrewCaskApp(ctx context.Context) (*os.Process, error, bool) {
 		process, err := darwin.OpenApp(ctx, appName, "monime-715")
 		return process, err, true
 	}
+	//nolint:nilnil
 	return nil, nil, false
 }

@@ -2,10 +2,16 @@ package allplatform
 
 import (
 	"bufio"
+	"context"
 	"fmt"
 	"os"
 	"os/exec"
 )
+
+func RunStringCommand(ctx context.Context, name string, args ...string) error {
+	cmd := exec.CommandContext(ctx, name, args...)
+	return RunCommand(cmd)
+}
 
 func RunCommand(cmd *exec.Cmd) error {
 	stdoutPipe, err := cmd.StdoutPipe()
@@ -16,14 +22,11 @@ func RunCommand(cmd *exec.Cmd) error {
 	if err != nil {
 		return fmt.Errorf("failed to get stderr pipe: %w", err)
 	}
-
 	stdoutScanner := bufio.NewScanner(stdoutPipe)
 	stderrScanner := bufio.NewScanner(stderrPipe)
-
-	if err := cmd.Start(); err != nil {
+	if err = cmd.Start(); err != nil {
 		return fmt.Errorf("failed to start command: %w", err)
 	}
-
 	go func() {
 		for stdoutScanner.Scan() {
 			fmt.Println(stdoutScanner.Text())

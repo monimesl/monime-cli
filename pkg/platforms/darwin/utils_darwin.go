@@ -2,19 +2,14 @@ package darwin
 
 import (
 	"context"
-	"errors"
 	"fmt"
 	"github.com/monimesl/monime-cli/pkg/platforms/allplatform"
 	"os"
 	"os/exec"
 	"path/filepath"
-	"runtime"
 )
 
 func IsAppInstalled(appName string) (bool, error) {
-	if runtime.GOOS != "darwin" {
-		return false, fmt.Errorf("platform must be darwin, got %s", runtime.GOOS)
-	}
 	appPath := filepath.Join("/Applications", appName+".app")
 	info, err := os.Stat(appPath)
 	if err != nil {
@@ -30,42 +25,32 @@ func IsAppInstalled(appName string) (bool, error) {
 }
 
 func OpenApp(ctx context.Context, appName, binaryName string) (*os.Process, error) {
-	if runtime.GOOS != "darwin" {
-		return nil, fmt.Errorf("platform must be darwin, got %s", runtime.GOOS)
-	}
 	appPath := filepath.Join("/Applications", appName+".app")
 	appExecutablePath := filepath.Join(appPath, "Contents", "MacOS", binaryName)
 	cmd := exec.CommandContext(ctx, appExecutablePath)
-	output, err := cmd.CombinedOutput()
-	if err != nil {
-		if errors.Is(err, context.Canceled) {
-			return nil, nil
-		}
-		return nil, fmt.Errorf("error opening app %s: %w\n%s", appName, err, output)
+	if err := cmd.Run(); err != nil {
+		return nil, fmt.Errorf("failed to start app %s: %w", appName, err)
 	}
 	return cmd.Process, nil
 }
 
 func InstallBrewCask(ctx context.Context, caskName, tapRepo string) error {
-	if runtime.GOOS != "darwin" {
-		return fmt.Errorf("brew cask installation is only supported on macOS")
-	}
 	brewPath, err := exec.LookPath("brew")
 	if err != nil {
 		fmt.Println("--- Homebrew Not Found ---")
 		fmt.Println("Homebrew is required but not found on your system.")
 		fmt.Println("Please install Homebrew first by following instructions at https://brew.sh/")
 		fmt.Println("--------------------------")
-		return fmt.Errorf("brew binary not found")
+		return fmt.Errorf("homebrew not found — please install it from https://brew.sh/: %w", err)
 	}
 	if tapRepo != "" {
 		cmd := exec.Command(brewPath, "tap", tapRepo)
-		if err := allplatform.RunCommand(cmd); err != nil {
-			return fmt.Errorf("Failed to tap repository %s. It might already be tapped or an error occurred: %v\n", tapRepo, err)
+		if err = allplatform.RunCommand(cmd); err != nil {
+			return fmt.Errorf("failed to tap repository %s: %w", tapRepo, err)
 		}
 	}
 	cmd := exec.CommandContext(ctx, brewPath, "install", "--cask", caskName, "-q")
-	if err := allplatform.RunCommand(cmd); err != nil {
+	if err = allplatform.RunCommand(cmd); err != nil {
 		fmt.Printf("Failed to install cask %s: %v\n", caskName, err)
 		return fmt.Errorf("failed to install Homebrew cask: %w", err)
 	}
