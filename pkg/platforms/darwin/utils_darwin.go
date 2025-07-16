@@ -49,7 +49,7 @@ func InstallBrewCask(ctx context.Context, caskName, tapRepo string) error {
 			return fmt.Errorf("failed to tap repository %s: %w", tapRepo, err)
 		}
 	}
-	cmd := exec.CommandContext(ctx, brewPath, "install", "--cask", caskName, "-q")
+	cmd := exec.CommandContext(ctx, brewPath, "install", "--cask", caskName)
 	if err = allplatform.RunCommand(cmd); err != nil {
 		fmt.Printf("Failed to install cask %s: %v\n", caskName, err)
 		return fmt.Errorf("failed to install Homebrew cask: %w", err)

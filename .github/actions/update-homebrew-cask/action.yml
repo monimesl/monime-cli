@@ -69,7 +69,6 @@ runs:
             POSTFLIGHT_SECTION="postflight do
             executable_path = \"#{appdir}/${{ inputs.app-bundle-name }}/Contents/MacOS/${{ inputs.app-executable-name }}\"
             system \"chmod\", \"0755\", executable_path
-            ohai \"Setting executable permissions for #{executable_path}\"
           end"
           fi
         fi
