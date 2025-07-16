@@ -11,9 +11,10 @@
 
 The Monime CLI is your command-line companion for building, testing, and managing your Monime integrations with unparalleled efficiency. Designed for developers and power users, it brings the full power of Monime's APIs and services directly to your terminal.
 
-This repository also includes two complementary graphical applications:
-* **USSD Simulator GUI**, providing a visual interface for testing payment codes and USSD flows locally.
-* **Webhook Inspector GUI**, a tool to easily inspect and debug incoming webhooks during your development.
+This CLI also manages two complementary GUI applications:
+
+* **USSD Simulator**, providing a visual interface for testing payment codes and USSD flows locally.
+* **Webhook Inspector**, a tool to easily inspect and debug incoming webhooks during your development.
 
 ## Installation
 
