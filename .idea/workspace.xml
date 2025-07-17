@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="affc4f20-083f-4aef-957d-99e2add6a251" name="Changes" comment="removed files">
+    <list default="true" id="affc4f20-083f-4aef-957d-99e2add6a251" name="Changes" comment="Update README file.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,10 +116,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="Updated Homebrew cask and README file.&#10;" />
-    <MESSAGE value="Updated Homebrew cask, README, and dependencies.&#10;" />
-    <MESSAGE value="Updated" />
-    <MESSAGE value="Updated dependencies, Homebrew cask, and README.&#10;" />
     <MESSAGE value="Updated dependencies." />
     <MESSAGE value="Restructure simulator commands and add macOS utilities." />
     <MESSAGE value="Refactored and restructured CLI commands for improved modularity." />
@@ -142,7 +137,11 @@
     <MESSAGE value="Refactored CLI app structure: modularized `start` commands, renamed packages (e.g., `ussd` to `ussdsimulator`), and updated build configurations." />
     <MESSAGE value="apply large-scale changes" />
     <MESSAGE value="removed files" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed files" />
+    <MESSAGE value="update..." />
+    <MESSAGE value="Update" />
+    <MESSAGE value="Update workspace settings and README file.&#10;" />
+    <MESSAGE value="Update README file." />
+    <option name="LAST_COMMIT_MESSAGE" value="Update README file." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
