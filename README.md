@@ -70,4 +70,4 @@ monime --version
 
 Copyright © Monime Ltd. All rights reserved.
 
-This project is licensed under the [Apache License 2.0 license](blob/main/LICENSE).
+This project is licensed under the [Apache 2.0 license](LICENSE).

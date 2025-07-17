@@ -4,18 +4,9 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="affc4f20-083f-4aef-957d-99e2add6a251" name="Changes" comment="Refactored project structure: moved packages to `internal`, added versioning support, improved CLI commands, and updated build configuration.">
-      <change afterPath="$PROJECT_DIR$/pkg/cmds/apps/ussdsimulator/cmd.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/cmds/apps/webhookinspector/cmd.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.goreleaser/cli.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.goreleaser/cli.yaml" afterDir="false" />
+    <list default="true" id="affc4f20-083f-4aef-957d-99e2add6a251" name="Changes" comment="removed files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/cmds/root.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/cmds/root.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/cmds/start/apps/ussd/simulator.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/cmds/apps/ussdsimulator/start.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/cmds/start/apps/ussd/utils_darwin.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/cmds/apps/ussdsimulator/utils_darwin.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/cmds/start/apps/ussd/utils_linux.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/cmds/apps/ussdsimulator/utils_linux.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/cmds/start/apps/ussd/utils_windows.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/cmds/apps/ussdsimulator/utils_windows.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/cmds/start/apps/webhook/inspector.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/cmds/apps/webhookinspector/start.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/cmds/start/root.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,12 +60,13 @@
     "git-widget-placeholder": "main",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "/Users/alphashaw/projects/Projects/sources/monimesl/apps/monime-cli/apps/ussd-simulator/frontend",
+    "last_opened_file_path": "/Users/alphashaw/projects/Projects/sources/monimesl/apps/monime-cli/cmd/monime",
     "settings.editor.selected.configurable": "com.github.blarc.ai.commits.intellij.plugin.settings.AppSettingsConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/cmd/monime" />
       <recent name="$PROJECT_DIR$/apps/ussd-simulator/frontend" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/apps" />
@@ -125,9 +117,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="Updated Homebrew cask and README.&#10;" />
-    <MESSAGE value="apply large-scale changes" />
-    <MESSAGE value="Updated Homebrew cask and README." />
     <MESSAGE value="Updated Homebrew cask and README file.&#10;" />
     <MESSAGE value="Updated Homebrew cask, README, and dependencies.&#10;" />
     <MESSAGE value="Updated" />
@@ -150,7 +139,10 @@
     <MESSAGE value="Removed redundant log message and unnecessary flag from Homebrew cask installation process." />
     <MESSAGE value="Removed redundant `ohai` logging and unnecessary quiet flag from Homebrew cask installation commands." />
     <MESSAGE value="Refactored project structure: moved packages to `internal`, added versioning support, improved CLI commands, and updated build configuration." />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactored project structure: moved packages to `internal`, added versioning support, improved CLI commands, and updated build configuration." />
+    <MESSAGE value="Refactored CLI app structure: modularized `start` commands, renamed packages (e.g., `ussd` to `ussdsimulator`), and updated build configurations." />
+    <MESSAGE value="apply large-scale changes" />
+    <MESSAGE value="removed files" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed files" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
