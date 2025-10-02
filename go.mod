@@ -4,12 +4,13 @@ go 1.23.1
 
 require (
 	github.com/monime-lab/gwater v0.0.0-20250625051747-596586865b91
-	github.com/monimesl/monime-cli/cli-utils v0.0.0-20250713060014-dc611bf56330
+	github.com/monimesl/monime-cli/pkg/utils v0.0.0-20250718181416-42063f7a3928
 	github.com/olekukonko/tablewriter v1.0.6
 	github.com/spf13/cobra v1.9.1
 	github.com/spf13/viper v1.20.1
 	github.com/zalando/go-keyring v0.2.6
 	golang.org/x/crypto v0.36.0
+	golang.org/x/term v0.30.0
 )
 
 require (

@@ -3,9 +3,10 @@ package account
 import (
 	"context"
 	"fmt"
-	"github.com/monimesl/monime-cli/cli-utils/monimeapis"
 	"net/http"
 	"os"
+
+	"github.com/monimesl/monime-cli/pkg/utils/monimeapis"
 )
 
 const (

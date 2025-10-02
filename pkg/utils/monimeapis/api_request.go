@@ -4,12 +4,13 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"net/http"
+	"reflect"
+
 	"github.com/monime-lab/gok/syserr"
 	"github.com/monime-lab/gwater/httputil"
 	"github.com/monime-lab/gwater/mimetype"
 	webclient "github.com/monime-lab/web-client-go"
-	"net/http"
-	"reflect"
 )
 
 type requestOptionConfig[Resp any] struct {

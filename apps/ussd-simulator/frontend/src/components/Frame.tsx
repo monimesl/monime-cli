@@ -69,7 +69,7 @@ export default function Frame(props: PropsWithChildren & { darkBackground?: bool
                             border: "none",
                             background: "none",
                             outline: "none",
-                            color: darkBackground? "white" : "black",
+                            color: darkBackground ? "white" : "black",
                         }}
                         className="max-w-fit p-0 m-0 h-fit focus:outline-none focus:ring-0 focus:border-none"
                     >

@@ -5,7 +5,115 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="affc4f20-083f-4aef-957d-99e2add6a251" name="Changes" comment="Update README file.">
+      <change afterPath="$PROJECT_DIR$/internal/prompts/prompt.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/actions/macos-sign-notarize/action.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/actions/macos-sign-notarize/action.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.goreleaser/cli.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.goreleaser/cli.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/backend/ussdgateway/gateway.go" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ussd-simulator/backend/ussdgateway/gateway.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/.eslintrc.cjs" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ussd-simulator/frontend/.eslintrc.cjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ussd-simulator/frontend/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/components.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ussd-simulator/frontend/components.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ussd-simulator/frontend/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/postcss.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ussd-simulator/frontend/postcss.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/components/Frame.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/components/Frame.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/components/ui/badge.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/components/ui/badge.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/components/ui/button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/components/ui/button.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/components/ui/card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/components/ui/card.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/components/ui/checkbox.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/components/ui/checkbox.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/components/ui/combobox.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/components/ui/combobox.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/components/ui/command.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/components/ui/command.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/components/ui/dialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/components/ui/dialog.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/components/ui/input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/components/ui/input.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/components/ui/popover.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/components/ui/popover.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/components/ui/radio-group.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/components/ui/radio-group.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/components/ui/select.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/components/ui/select.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/components/ui/switch.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/components/ui/switch.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/lib/apis.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/lib/apis.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/lib/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/lib/utils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/model/config/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/model/config/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/screens/DialPadScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/screens/DialPadScreen.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/screens/ReplyScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/screens/ReplyScreen.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ussd-simulator/frontend/src/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ussd-simulator/frontend/tailwind.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ussd-simulator/frontend/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/tsconfig.node.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ussd-simulator/frontend/tsconfig.node.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ussd-simulator/frontend/vite.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/wailsjs/go/models.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ussd-simulator/frontend/wailsjs/go/models.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/wailsjs/go/ussdgateway/Gateway.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ussd-simulator/frontend/wailsjs/go/ussdgateway/Gateway.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/wailsjs/go/ussdgateway/Gateway.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ussd-simulator/frontend/wailsjs/go/ussdgateway/Gateway.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/frontend/wailsjs/runtime/runtime.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ussd-simulator/frontend/wailsjs/runtime/runtime.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ussd-simulator/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ussd-simulator/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/.eslintrc.cjs" beforeDir="false" afterPath="$PROJECT_DIR$/apps/webhook/frontend/.eslintrc.cjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/components.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/webhook/frontend/components.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/webhook/frontend/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/postcss.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/webhook/frontend/postcss.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/webhook/frontend/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/src/components/EventsPopover.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/webhook/frontend/src/components/EventsPopover.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/src/components/RequestDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/webhook/frontend/src/components/RequestDetails.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/src/components/RequestList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/webhook/frontend/src/components/RequestList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/src/components/SimulateEventPopover.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/webhook/frontend/src/components/SimulateEventPopover.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/src/components/TunnelPopover.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/webhook/frontend/src/components/TunnelPopover.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/src/components/WebhookHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/webhook/frontend/src/components/WebhookHeader.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/src/components/ui/badge.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/webhook/frontend/src/components/ui/badge.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/src/components/ui/button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/webhook/frontend/src/components/ui/button.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/src/components/ui/card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/webhook/frontend/src/components/ui/card.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/src/components/ui/checkbox.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/webhook/frontend/src/components/ui/checkbox.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/src/components/ui/combobox.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/webhook/frontend/src/components/ui/combobox.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/src/components/ui/command.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/webhook/frontend/src/components/ui/command.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/src/components/ui/dialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/webhook/frontend/src/components/ui/dialog.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/src/components/ui/input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/webhook/frontend/src/components/ui/input.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/src/components/ui/popover.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/webhook/frontend/src/components/ui/popover.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/src/components/ui/radio-group.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/webhook/frontend/src/components/ui/radio-group.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/src/components/ui/select.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/webhook/frontend/src/components/ui/select.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/src/components/ui/switch.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/webhook/frontend/src/components/ui/switch.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/apps/webhook/frontend/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/webhook/frontend/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/src/lib/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/webhook/frontend/src/lib/utils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/src/types/webhook.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/webhook/frontend/src/types/webhook.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/src/utils/webhook.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/webhook/frontend/src/utils/webhook.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/webhook/frontend/tailwind.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/webhook/frontend/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/tsconfig.node.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/webhook/frontend/tsconfig.node.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/webhook/frontend/vite.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/wailsjs/go/main/App.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/webhook/frontend/wailsjs/go/main/App.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/wailsjs/go/main/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/webhook/frontend/wailsjs/go/main/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/webhook/frontend/wailsjs/runtime/runtime.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/webhook/frontend/wailsjs/runtime/runtime.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/browser/browser.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/browser/browser.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/browser/browser_darwin.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/browser/browser_darwin.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/browser/browser_linux.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/browser/browser_linux.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/browser/browser_windows.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/browser/browser_windows.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/platforms/darwin/utils_darwin.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/platforms/darwin/utils_darwin.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/platforms/linux/utils_linux.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/platforms/linux/utils_linux.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/resource/account/login/flow.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/resource/account/login/flow.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/resource/account/login/token.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/resource/account/login/token.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/resource/account/login/token_decrypter.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/resource/account/login/token_decrypter.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/resource/account/login/token_verifier.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/resource/account/login/token_verifier.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/resource/account/repository.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/resource/account/repository.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/resource/account/service.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/resource/account/service.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/resource/account/utils.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/resource/account/utils.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/resource/space/repository.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/resource/space/repository.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/resource/space/service.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/resource/space/service.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/store/store_impl.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/store/store_impl.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/text/formatting.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/text/formatting.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/cmds/account/list.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/cmds/account/list.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/cmds/account/login.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/cmds/account/login.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/cmds/account/logout.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/cmds/account/logout.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/cmds/apps/ussdsimulator/start.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/cmds/apps/ussdsimulator/start.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/cmds/apps/ussdsimulator/utils_darwin.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/cmds/apps/ussdsimulator/utils_darwin.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/cmds/apps/ussdsimulator/utils_linux.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/cmds/apps/ussdsimulator/utils_linux.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/cmds/apps/webhookinspector/start.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/cmds/apps/webhookinspector/start.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/cmds/root.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/cmds/root.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/cmds/space/activate.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/cmds/space/activate.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/cmds/space/list.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/cmds/space/list.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/cmds/version.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/cmds/version.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/cobras/validators.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/cobras/validators.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/utils/monimeapis/api_request.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/utils/monimeapis/api_request.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/utils/monimeapis/web_client.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/utils/monimeapis/web_client.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +143,7 @@
     &quot;accountId&quot;: &quot;2d1d2d0b-64c6-4259-afda-2753c09b8150&quot;
   }
 }</component>
+  <component name="GoLinterSelectedExecutable" path="/opt/homebrew/bin/golangci-lint" />
   <component name="MaliciousPackageCheckinHandlerState">
     <option name="packageCheck" value="true" />
   </component>
@@ -51,7 +160,10 @@
     "DefaultGoTemplateProperty": "Go File",
     "Go Build.go build github.com/monimesl/monime-cli/cmd/gen.executor": "Debug",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.GoLinterPluginOnboarding": "true",
+    "RunOnceActivity.GoLinterPluginStorageMigration": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.go.formatter.settings.were.checked": "true",
     "RunOnceActivity.go.migrated.go.modules.settings": "true",
@@ -59,8 +171,12 @@
     "git-widget-placeholder": "main",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "/Users/alphashaw/projects/Projects/sources/monimesl/apps/monime-cli/cmd/monime",
-    "settings.editor.selected.configurable": "com.github.blarc.ai.commits.intellij.plugin.settings.AppSettingsConfigurable"
+    "last_opened_file_path": "/Users/alpha",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.github.blarc.ai.commits.intellij.plugin.settings.AppSettingsConfigurable",
+    "ts.external.directory.path": "/Users/alpha/projects/source/monimesl/apps/cli/monime-cli/apps/ussd-simulator/frontend/node_modules/typescript/lib"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -97,7 +213,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-gosdk-3b128438d3f6-07d2d2d66b1e-org.jetbrains.plugins.go.sharedIndexes.bundled-GO-251.26927.50" />
+        <option value="bundled-gosdk-f466f9b0953e-3d2cccfc42a2-org.jetbrains.plugins.go.sharedIndexes.bundled-GO-252.26199.158" />
+        <option value="bundled-js-predefined-d6986cc7102b-9c94529fcfe0-JavaScript-GO-252.26199.158" />
       </set>
     </attachedChunks>
   </component>
@@ -110,6 +227,9 @@
       <updated>1652061092566</updated>
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="UpdateCopyrightCheckinHandler">
     <option name="UPDATE_COPYRIGHT" value="true" />

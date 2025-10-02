@@ -3,10 +3,11 @@ package darwin
 import (
 	"context"
 	"fmt"
-	"github.com/monimesl/monime-cli/internal/platforms/allplatform"
 	"os"
 	"os/exec"
 	"path/filepath"
+
+	"github.com/monimesl/monime-cli/internal/platforms/allplatform"
 )
 
 func IsAppInstalled(appName string) (bool, error) {

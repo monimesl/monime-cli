@@ -3,6 +3,7 @@ package login
 import (
 	"encoding/base64"
 	"errors"
+
 	"golang.org/x/crypto/nacl/box"
 )
 

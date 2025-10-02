@@ -4,14 +4,15 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"github.com/monime-lab/gwater/ioutil"
-	"github.com/monimesl/monime-cli/internal/platforms/allplatform"
-	text2 "github.com/monimesl/monime-cli/internal/text"
 	"io"
 	"net/http"
 	"os"
 	"os/exec"
 	"path/filepath"
+
+	"github.com/monime-lab/gwater/ioutil"
+	"github.com/monimesl/monime-cli/internal/platforms/allplatform"
+	text2 "github.com/monimesl/monime-cli/internal/text"
 )
 
 func IsBinaryInstalled(binaryName string) string {

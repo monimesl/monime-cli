@@ -12,8 +12,8 @@ const exchange = memoize((request: ussdgateway.ExchangeRequest & {
     idempotency?: string;
 }) => {
     return Exchange(request);
-}, (newArgs, lastArgs)=> {
-    if(newArgs.length !== lastArgs.length) {
+}, (newArgs, lastArgs) => {
+    if (newArgs.length !== lastArgs.length) {
         return false;
     }
     return JSON.stringify(newArgs[0]) == JSON.stringify(lastArgs[0])

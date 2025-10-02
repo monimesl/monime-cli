@@ -6,6 +6,10 @@ func FormatToGreen(s string) string {
 	return Format(s, FormatOptions{Color: "green"})
 }
 
+func FormatToWhite(s string) string {
+	return Format(s, FormatOptions{Color: "white"})
+}
+
 type FormatOptions struct {
 	Color string // green, red, yellow
 	Bold  bool

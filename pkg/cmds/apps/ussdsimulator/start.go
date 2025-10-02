@@ -1,12 +1,13 @@
 package ussdsimulator
 
 import (
+	"os"
+	"os/signal"
+
 	"github.com/monimesl/monime-cli/internal/resource/account"
 	text2 "github.com/monimesl/monime-cli/internal/text"
 	"github.com/monimesl/monime-cli/pkg/cobras"
 	"github.com/spf13/cobra"
-	"os"
-	"os/signal"
 )
 
 var start = &cobra.Command{

@@ -47,7 +47,7 @@ runs:
 
     - name: Sign application
       shell: bash
-      run: |        
+      run: |
         codesign --deep --timestamp --options=runtime \
           --entitlements "${{ inputs.app-entitlement_plist }}" \
           -s "${{ inputs.apple-developer-id }}" \

@@ -2,6 +2,7 @@ package account
 
 import (
 	"context"
+
 	errors2 "github.com/monimesl/monime-cli/internal/errors"
 	"github.com/monimesl/monime-cli/internal/resource/account"
 	"github.com/monimesl/monime-cli/internal/text"

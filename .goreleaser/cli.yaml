@@ -4,7 +4,7 @@ project_name: monime
 
 checksum:
   disable: true
-  
+
 changelog:
   disable: true
 
@@ -71,13 +71,13 @@ builds:
 
 archives:
   - id: mac-archive
-    builds: [mac-build]
+    builds: [ mac-build ]
     name_template: "monime_cli_{{ .Version }}_macOS_{{ .Arch }}"
     wrap_in_directory: true
     files:
       - none*
   - id: linux-archive
-    builds: [linux-build]
+    builds: [ linux-build ]
     name_template: "monime_cli_{{ .Version }}_linux_{{ .Arch }}"
     wrap_in_directory: true
     files:

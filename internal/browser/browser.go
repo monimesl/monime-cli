@@ -1,16 +1,17 @@
 package browser
 
 import (
+	"context"
 	"os"
 	"os/exec"
 )
 
-func OpenURL(url string) (*exec.Cmd, error) {
-	return open(url)
+func OpenURL(ctx context.Context, url string) (*exec.Cmd, error) {
+	return open(ctx, url)
 }
 
-func runCmd(cmd string, args ...string) (Command, error) {
-	c := exec.Command(cmd, args...)
+func runCmd(ctx context.Context, cmd string, args ...string) (Command, error) {
+	c := exec.CommandContext(ctx, cmd, args...)
 	c.Stdout = os.Stdout
 	c.Stderr = os.Stderr
 	if err := c.Run(); err != nil {

@@ -2,9 +2,10 @@ package ussdsimulator
 
 import (
 	"context"
+	"os"
+
 	"github.com/monimesl/monime-cli/internal/platforms/darwin"
 	"github.com/monimesl/monime-cli/internal/text"
-	"os"
 )
 
 const (

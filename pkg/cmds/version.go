@@ -2,6 +2,7 @@ package cmds
 
 import (
 	"fmt"
+
 	"github.com/monimesl/monime-cli/pkg/cobras"
 	"github.com/monimesl/monime-cli/pkg/version"
 	"github.com/spf13/cobra"

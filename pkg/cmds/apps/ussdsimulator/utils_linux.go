@@ -3,11 +3,12 @@ package ussdsimulator
 import (
 	"context"
 	"fmt"
+	"os"
+	"path/filepath"
+
 	"github.com/monimesl/monime-cli/internal/platforms/allplatform"
 	"github.com/monimesl/monime-cli/internal/platforms/linux"
 	"github.com/monimesl/monime-cli/internal/text"
-	"os"
-	"path/filepath"
 )
 
 const (

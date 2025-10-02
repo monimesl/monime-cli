@@ -1,5 +1,7 @@
 package browser
 
-func open(url string) (Command, error) {
-	return runCmd("open", url)
+import "context"
+
+func open(ctx context.Context, url string) (Command, error) {
+	return runCmd(ctx, "open", url)
 }

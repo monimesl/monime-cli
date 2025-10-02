@@ -4,10 +4,11 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"github.com/spf13/viper"
-	"github.com/zalando/go-keyring"
 	"os"
 	"path/filepath"
+
+	"github.com/spf13/viper"
+	"github.com/zalando/go-keyring"
 )
 
 const (

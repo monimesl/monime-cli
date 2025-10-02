@@ -3,19 +3,20 @@ package cmds
 import (
 	"context"
 	"errors"
-	"github.com/monimesl/monime-cli/cli-utils/monimeapis"
+	"os"
+	"os/signal"
+	"syscall"
+	"time"
+
 	errors2 "github.com/monimesl/monime-cli/internal/errors"
 	"github.com/monimesl/monime-cli/internal/text"
 	"github.com/monimesl/monime-cli/pkg/cmds/account"
 	"github.com/monimesl/monime-cli/pkg/cmds/apps/ussdsimulator"
 	"github.com/monimesl/monime-cli/pkg/cmds/apps/webhookinspector"
 	"github.com/monimesl/monime-cli/pkg/cmds/space"
+	"github.com/monimesl/monime-cli/pkg/utils/monimeapis"
 	"github.com/monimesl/monime-cli/pkg/version"
 	"github.com/spf13/cobra"
-	"os"
-	"os/signal"
-	"syscall"
-	"time"
 )
 
 var rootCmd = &cobra.Command{

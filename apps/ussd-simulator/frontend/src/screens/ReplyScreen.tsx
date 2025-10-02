@@ -10,7 +10,7 @@ const maxCharacters = 182;
 
 
 export default function ReplyScreen() {
-    const { session, setSession } = useSession();
+    const {session, setSession} = useSession();
     const [reply, setReply] = useState("");
 
     const handleCancel = () => {
@@ -20,8 +20,8 @@ export default function ReplyScreen() {
         })
     };
     const handleSendReply = () => {
-       const sanitizedReply = reply.trim()
-        if (!sanitizedReply)return
+        const sanitizedReply = reply.trim()
+        if (!sanitizedReply) return
         setSession({
             screen: 'loading',
             idempotency: uuid4(),

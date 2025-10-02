@@ -1,8 +1,9 @@
 package monimeapis
 
 import (
-	webclient "github.com/monime-lab/web-client-go"
 	"sync"
+
+	webclient "github.com/monime-lab/web-client-go"
 )
 
 const (

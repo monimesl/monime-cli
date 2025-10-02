@@ -6,13 +6,17 @@ import (
 	"encoding/base64"
 	"errors"
 	"fmt"
-	"github.com/monime-lab/gwater"
-	"github.com/monimesl/monime-cli/internal/browser"
-	"golang.org/x/crypto/nacl/box"
 	"log"
 	"net/http"
 	"net/url"
+	"os"
 	"time"
+
+	"github.com/monime-lab/gwater"
+	"github.com/monimesl/monime-cli/internal/browser"
+	"github.com/monimesl/monime-cli/internal/prompts"
+	"github.com/monimesl/monime-cli/internal/text"
+	"golang.org/x/crypto/nacl/box"
 )
 
 const (
@@ -94,8 +98,13 @@ func (f *Flow) launchInteraction(ctx context.Context, publicKey, state string) (
 	if err != nil {
 		return SecuredToken{}, err
 	}
+	text.PrintStart(fmt.Sprintf("%s to open the URL in your browser to initiate the login.",
+		text.Format("Press Enter", text.FormatOptions{Color: "white", Bold: true})))
+	if ok, _ := prompts.EnterKey(ctx); !ok {
+		os.Exit(0)
+	}
 	fmt.Println("🔐 Opening browser for login...")
-	if _, err = browser.OpenURL(authURL); err != nil {
+	if _, err = browser.OpenURL(ctx, authURL); err != nil {
 		return SecuredToken{}, fmt.Errorf("failed to open browser: %w", err)
 	}
 	fmt.Printf("🌐 Listening on %s\n", callbackURL)

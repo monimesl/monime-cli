@@ -2,14 +2,22 @@ package ussdgateway
 
 import (
 	"context"
-	"github.com/monime-lab/gok/syserr"
-	"github.com/monimesl/monime-cli/pkg/utils/monimeapis"
+	"log"
 	"net/http"
+	"net/url"
+	"strings"
 	"time"
+
+	"github.com/monime-lab/gok/syserr"
+	"github.com/monime-lab/gwater/envutil"
+	"github.com/monime-lab/gwater/typeutil"
+	"github.com/monimesl/monime-cli/pkg/utils/monimeapis"
 )
 
 type Gateway struct {
-	ctx context.Context
+	ctx            context.Context
+	exchangeUrl    string
+	exchangeMsisdn string
 }
 
 func New() *Gateway {
@@ -18,6 +26,20 @@ func New() *Gateway {
 
 func (g *Gateway) Initialize(ctx context.Context) {
 	g.ctx = ctx
+	exchangeUrl := strings.TrimSpace(envutil.GetOptionalValue("MONIME_CLI_USSD_GATEWAY_EXCHANGE_URL", ""))
+	exchangeMsisdn := strings.TrimSpace(envutil.GetOptionalValue("MONIME_CLI_USSD_GATEWAY_EXCHANGE_MSISDN", ""))
+	if exchangeUrl != "" {
+		u, err := url.ParseRequestURI(exchangeUrl)
+		if err != nil {
+			log.Fatalf("Invalid exchange URL: %s", exchangeUrl)
+		}
+		exchangeUrl = u.String()
+	} else {
+		exchangeMsisdn = ""
+		exchangeUrl = "/ussd-exchanges"
+	}
+	g.exchangeUrl = exchangeUrl
+	g.exchangeMsisdn = exchangeMsisdn
 }
 
 type ExchangeRequest struct {
@@ -46,8 +68,9 @@ func (g *Gateway) Exchange(request ExchangeRequest) (*ExchangeResponse, error) {
 func (g *Gateway) exchange(ctx context.Context, request ExchangeRequest) (ExchangeResponse, error) {
 	type ExchangeReq struct {
 		Session *struct {
-			Network     string `json:"network"`
-			InitialCode string `json:"initialCode"`
+			Network     string  `json:"network"`
+			Msisdn      *string `json:"msisdn"`
+			InitialCode string  `json:"initialCode"`
 		} `json:"session,omitempty"`
 		Reply *struct {
 			SessionId string `json:"sessionId"`
@@ -63,10 +86,12 @@ func (g *Gateway) exchange(ctx context.Context, request ExchangeRequest) (Exchan
 	var req ExchangeReq
 	if request.SessionId == "" {
 		req.Session = &struct {
-			Network     string `json:"network"`
-			InitialCode string `json:"initialCode"`
+			Network     string  `json:"network"`
+			Msisdn      *string `json:"msisdn"`
+			InitialCode string  `json:"initialCode"`
 		}{
 			Network:     request.NetworkId,
+			Msisdn:      typeutil.StringPtr(g.exchangeMsisdn),
 			InitialCode: request.InitialUssdCode,
 		}
 	} else {
@@ -78,7 +103,7 @@ func (g *Gateway) exchange(ctx context.Context, request ExchangeRequest) (Exchan
 			Data:      request.ReplyData,
 		}
 	}
-	result, err := monimeapis.ApiRequest[ExchangeReq, Session](ctx, nil, http.MethodPost, "/ussd-exchanges", req)
+	result, err := monimeapis.ApiRequest[ExchangeReq, Session](ctx, nil, http.MethodPost, g.exchangeUrl, req)
 	if err != nil {
 		return ExchangeResponse{}, err
 	}

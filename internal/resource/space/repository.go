@@ -4,8 +4,10 @@ import (
 	"context"
 	"errors"
 	"fmt"
-	"github.com/monimesl/monime-cli/cli-utils/monimeapis"
+
 	"github.com/monimesl/monime-cli/internal/store"
+	"github.com/monimesl/monime-cli/pkg/utils/monimeapis"
+
 	"net/http"
 )
 

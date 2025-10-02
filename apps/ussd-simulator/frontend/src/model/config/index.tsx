@@ -19,7 +19,7 @@ export interface Config {
 }
 
 
-export const newConfig= (): Config => {
+export const newConfig = (): Config => {
     return ({
         network: {
             id: 'm17'

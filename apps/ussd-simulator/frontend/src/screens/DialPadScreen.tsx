@@ -26,7 +26,7 @@ export default function DialPadScreen() {
     const {setSession} = useSession()
     const [ussdCode, setUssdCode] = useState("");
     const disableDialButton = useMemo(() => {
-        if(!ussdCode.startsWith("*715")) {
+        if (!ussdCode.startsWith("*715")) {
             return true
         }
         return !ussdCode.endsWith("#");
@@ -39,7 +39,7 @@ export default function DialPadScreen() {
         setUssdCode((prev) => prev.slice(0, -1));
     }, [])
     const handleCall = () => {
-        if(!ussdCode)return
+        if (!ussdCode) return
         setSession({
             id: '',
             screen: 'loading',

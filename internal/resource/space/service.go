@@ -3,9 +3,10 @@ package space
 import (
 	"context"
 	"fmt"
+	"os"
+
 	"github.com/monimesl/monime-cli/internal/text"
 	"github.com/olekukonko/tablewriter"
-	"os"
 )
 
 func NewService() (*Service, error) {

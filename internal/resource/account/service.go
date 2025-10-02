@@ -3,12 +3,13 @@ package account
 import (
 	"context"
 	"fmt"
+	"os"
+	"strconv"
+
 	"github.com/monime-lab/gwater"
 	"github.com/monimesl/monime-cli/internal/resource/account/login"
 	text2 "github.com/monimesl/monime-cli/internal/text"
 	"github.com/olekukonko/tablewriter"
-	"os"
-	"strconv"
 )
 
 func NewService() (*Service, error) {

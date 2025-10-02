@@ -1,8 +1,9 @@
 package webhookinspector
 
 import (
-	"github.com/spf13/cobra"
 	"os/exec"
+
+	"github.com/spf13/cobra"
 )
 
 var start = &cobra.Command{
