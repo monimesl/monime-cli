@@ -3,7 +3,7 @@ module github.com/monimesl/monime-cli
 go 1.23.1
 
 require (
-	github.com/monime-lab/gwater v0.0.0-20250625051747-596586865b91
+	github.com/monime-lab/gwater v0.0.0-20250910134016-f90f53e9f21a
 	github.com/monimesl/monime-cli/pkg/utils v0.0.0-20250718181416-42063f7a3928
 	github.com/olekukonko/tablewriter v1.0.6
 	github.com/spf13/cobra v1.9.1

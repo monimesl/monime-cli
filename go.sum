@@ -49,8 +49,8 @@ github.com/monime-lab/gok v0.0.0-20250701051803-012a96297e2e h1:GP9Zu1+HQCHHfupg
 github.com/monime-lab/gok v0.0.0-20250701051803-012a96297e2e/go.mod h1:6hBqkgEMe9DYRpxaG0YBXAi38cby/Gums2L0GlxGEXo=
 github.com/monime-lab/gotries v0.1.2-0.20230722030820-0e8efc082234 h1:vEISs16n3FwlEulXGgCjp73jubgBevftmBipx5tVmAY=
 github.com/monime-lab/gotries v0.1.2-0.20230722030820-0e8efc082234/go.mod h1:J/j6v36GCr4nlzoeIqvpvma/woGFZVo13dkEH1BcsQY=
-github.com/monime-lab/gwater v0.0.0-20250625051747-596586865b91 h1:QxARMyO8cRUTpMKCE5v2f5dVHw/gyxOwqgXRFNxCA1Q=
-github.com/monime-lab/gwater v0.0.0-20250625051747-596586865b91/go.mod h1:/asNpc6bW0wvCAddpnOQcTX3OlFA8eC6gazFwLqahqs=
+github.com/monime-lab/gwater v0.0.0-20250910134016-f90f53e9f21a h1:Pbb1hjc8i4ykCxwN48B2wb8O1YypYMcL3Je/SMjtDxU=
+github.com/monime-lab/gwater v0.0.0-20250910134016-f90f53e9f21a/go.mod h1:/asNpc6bW0wvCAddpnOQcTX3OlFA8eC6gazFwLqahqs=
 github.com/monime-lab/sgdns-go v0.0.0-20231102164324-5f4152ddc71d h1:LDLuDhlMidVVcqRk7yBAdp17ZHQR4dUFtUJLMixQJbE=
 github.com/monime-lab/sgdns-go v0.0.0-20231102164324-5f4152ddc71d/go.mod h1:56m4m9uH1D6gz/6oPpUFbyONbyfwstFmGtWIdkSze7k=
 github.com/monime-lab/web-client-go v0.0.0-20250507073720-03ce4bc25de7 h1:hvr+SEvcdO0254X2mSqti2AG69y+KKKGgGCEbo/7LSI=
