@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="affc4f20-083f-4aef-957d-99e2add6a251" name="Changes" comment="Add custom USSD exchange URL and MSISDN support.&#10;format source files.">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/cli-release.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/cli-release.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="affc4f20-083f-4aef-957d-99e2add6a251" name="Changes" comment="Add custom USSD exchange URL and MSISDN support.&#10;format source files." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

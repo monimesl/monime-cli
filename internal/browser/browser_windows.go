@@ -1,6 +1,7 @@
 package browser
 
 import (
+	"context"
 	"errors"
 	"os/exec"
 )
