@@ -1,6 +1,7 @@
 package browser
 
 import (
+	"context"
 	"os/exec"
 	"strings"
 )
